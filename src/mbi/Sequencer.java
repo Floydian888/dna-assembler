@@ -3,6 +3,9 @@ package mbi;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collection;
 import java.util.Collections;
@@ -11,8 +14,19 @@ import java.util.List;
 
 public class Sequencer {
 
-	// nie wiem czy ma to ostatecznie byæ, ale do naszych testów niech na razie zostanie
-	public static String generateSequence(int length) {
+	private String sequence;
+	private DeBruijnGraph deBruijnGraph; 
+
+	public final String getInputSequence() {
+		return sequence;
+	}
+	
+	public void loadSequence(String sequenceToLoad) {
+		sequence = sequenceToLoad;
+	}
+	
+	// nie wiem czy ma to ostatecznie byï¿½, ale do naszych testï¿½w niech na razie zostanie
+	public void generateSequence(int length) {
 		StringBuilder builder = new StringBuilder();
 		for (int i = 0; i < length; ++i) {
 			double rand = Math.random();
@@ -26,13 +40,13 @@ public class Sequencer {
 				builder.append("A");
 			}
 		}
-		return builder.toString();
+		sequence = builder.toString();
 	}
 
-	public static List<String> shotgun(String dna, int k) {
+	public List<String> shotgun(int oneKmerLength) {
 		List<String> results = new LinkedList<String>();
-		for (int i = 0; i <= dna.length() - k; ++i) {
-			results.add(dna.substring(i, i + k));
+		for (int i = 0; i <= sequence.length() - oneKmerLength; ++i) {
+			results.add(sequence.substring(i, i + oneKmerLength));
 		}
 		Collections.shuffle(results);
 		return results;
@@ -58,15 +72,18 @@ public class Sequencer {
 				graph.addEdge(graph.createEdge(lo,ld),lo,ld);
 			}
 		}
-		System.out.println(graph.toString()); // mo¿na sobie zerkn¹æ czy nie oszukuje ;)
+		//System.out.println(graph.toString()); // moï¿½na sobie zerknï¿½ï¿½ czy nie oszukuje ;)
 		return graph;
 
 	}
 
-	public static String assemble(List<String> kmers)
+	public void buildDeBruijnGraph (List<String> kmers) {
+		deBruijnGraph = getDeBruijnGraph(kmers, true);
+	}
+	
+	public String assemble()
 			throws MbiException {
-		DeBruijnGraph graph = getDeBruijnGraph(kmers, true);
-		List<String> path = graph.findEulerPath();
+		List<String> path = deBruijnGraph.findEulerPath_Fleury();
 		if (path != null && path.size() > 0) {
 			return pathToGenome(path);
 		} else {
@@ -83,10 +100,10 @@ public class Sequencer {
 		return sb.toString();
 	}
 
-	public static String readSequenceFromFile(String fileName) {
+	public void loadSequenceFromFile(String pathToFile) {
 		String subStr = "";
 		try {
-			FileInputStream fstream = new FileInputStream(fileName);
+			FileInputStream fstream = new FileInputStream(pathToFile);
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			String strLine;
@@ -98,7 +115,18 @@ public class Sequencer {
 			System.err.println("Error: " + e.getMessage());
 
 		}
-		return subStr.trim();
-
+		sequence = subStr.trim();
+	}
+	
+	public void loadSequenceFromOneLineFile(String pathToFile) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(pathToFile));
+		try {
+		    StringBuilder sequenceBuilder = new StringBuilder();
+		    sequenceBuilder.append(br.readLine());
+		    sequence = sequenceBuilder.toString();
+		   }
+		finally {
+		    br.close();
+		}
 	}
 }

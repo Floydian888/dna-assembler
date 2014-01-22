@@ -11,7 +11,7 @@ public class DeBruijnGraph extends DirectedSparseMultigraph<String, String> {
 	private static final long serialVersionUID = 1L;
 	
 	//+++++++++++++++++++++++ magic happens +++++++++++++++++++++++++++++
-	//++++++++++++ straszna gimmnastyka, ale inaczej nie dzia³a +++++++++
+	//++++++++++++ straszna gimmnastyka, ale inaczej nie dziaï¿½a +++++++++
 	private DirectedSparseMultigraph<String, String> g;
 	public void setGraph(DirectedSparseMultigraph<String, String> graph){
 		g = graph;
@@ -52,7 +52,7 @@ public class DeBruijnGraph extends DirectedSparseMultigraph<String, String> {
 		return vers;
 	}
 
-	public synchronized List<String> findEulerPath() // na razie algorytm Fleury'ego
+	public synchronized List<String> findEulerPath_Fleury() // na razie algorytm Fleury'ego
 			throws MbiException {
 		List<String> path = new LinkedList<String>();
 		DeBruijnGraph gtmp = (DeBruijnGraph) g; // niezbyt eleganckie 
