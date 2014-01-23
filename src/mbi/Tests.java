@@ -154,7 +154,53 @@ public class Tests {
 		assemble(sequencer, oneKmerLength, kmersOverlapLength);
 	}
 	
+	private void testWithConstOverlap(String fileName) throws Exception {
+		String pathToFile = pathToGenomeData + fileName;
+		
+		// Helpers.log(bigSeparator);
+		// Helpers.log(getCurrentDate());
+		// Helpers.log("file name: " + fileName);
+
+		int kmerLength = 0;
+		int kmersOverlapLength;
+
+		int start = 2;
+		int end = 22;
+		
+		int i = start;
+		String inputSequence = null;
+
+		do {
+			kmerLength = i;
+			kmersOverlapLength = kmerLength - 1;
+
+			// Helpers.log(smallSeparator);
+
+			AssembleFromFileCommand assembleFromFileCommand = new AssembleFromFileCommand(
+					System.getProperty("user.dir") + pathToFile, kmerLength,
+					kmersOverlapLength);
+
+			timeMeasureHandler.executeAndMeasure(assembleFromFileCommand, "whole operation");
+			inputSequence = assembleFromFileCommand.getInputSequence();
+
+			// Helpers.log("one k-mer length: " + kmerLength);
+			// Helpers.log("kmersOverlapLength: " + kmersOverlapLength);
+			// Helpers.log("kmersOverlapDifference: " + kmersOverlapDifference);
+
+			// Helpers.log("genome length: " + inputSequence.length());
+
+			i = i + 1;
+
+		}
+		while(i < end);
+	}
+	
 	@Test
+	public void phiX174_constOverlap() throws Exception {
+		testWithConstOverlap("phiX174-1line.txt");
+	}
+	
+	//@Test
 	public void phiX174() throws Exception {
 		int kmerLength = 0;
 		String fileName = "phiX174-1line.txt";

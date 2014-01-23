@@ -8,13 +8,13 @@ import java.io.PrintWriter;
 public class Helpers {
 
 	private static boolean doLog = true;
-	private static final String fileName = "log5.txt";
+	private static final String pathToFile = "/log/log5.txt";
 
 	private static void appendToLogFile(String message) throws IOException {
 		if (doLog) {
 			PrintWriter out = new PrintWriter(new BufferedWriter(
 					new FileWriter(System.getProperty("user.dir") + "/"
-							+ fileName, true)));
+							+ pathToFile, true)));
 			out.println(message);
 			out.close();
 		}
