@@ -1,0 +1,359 @@
+=================
+2014/01/22 18:52:36
+file name: phiX174-1line.txt
+---------
+edges: 5385
+vertices: 4
+de Bruijn graph building: 0.321064261
+finding eulerian path: 0.193996902
+INPUT differs from RESULT
+longest common substring: 12
+whole operation: 0.785343426
+one k-mer length: 2
+kmersOverlapLength: 1
+kmersOverlapDifference: 1
+genome length: 5386
+---------
+edges: 5384
+vertices: 16
+de Bruijn graph building: 0.313209609
+finding eulerian path: 0.103376039
+INPUT differs from RESULT
+longest common substring: 14
+whole operation: 0.663646364
+one k-mer length: 3
+kmersOverlapLength: 2
+kmersOverlapDifference: 1
+genome length: 5386
+---------
+edges: 5384
+vertices: 16
+de Bruijn graph building: 0.074813941
+finding eulerian path: 0.102622763
+INPUT differs from RESULT
+longest common substring: 14
+whole operation: 0.416999049
+one k-mer length: 3
+kmersOverlapLength: 2
+kmersOverlapDifference: 2
+genome length: 5386
+---------
+edges: 5382
+vertices: 255
+de Bruijn graph building: 0.013520962
+finding eulerian path: 0.057119984
+INPUT differs from RESULT
+longest common substring: 12
+whole operation: 0.331172915
+one k-mer length: 5
+kmersOverlapLength: 4
+kmersOverlapDifference: 1
+genome length: 5386
+---------
+edges: 5382
+vertices: 255
+de Bruijn graph building: 0.013498226
+finding eulerian path: 0.057262961
+INPUT differs from RESULT
+longest common substring: 12
+whole operation: 0.351918737
+one k-mer length: 5
+kmersOverlapLength: 4
+kmersOverlapDifference: 2
+genome length: 5386
+---------
+edges: 5382
+vertices: 255
+de Bruijn graph building: 0.013515986
+finding eulerian path: 0.055302408
+INPUT differs from RESULT
+longest common substring: 12
+whole operation: 0.26057815
+one k-mer length: 5
+kmersOverlapLength: 4
+kmersOverlapDifference: 3
+genome length: 5386
+---------
+edges: 5382
+vertices: 255
+de Bruijn graph building: 0.01343309
+finding eulerian path: 0.0579925
+INPUT differs from RESULT
+longest common substring: 12
+whole operation: 0.260271951
+one k-mer length: 5
+kmersOverlapLength: 4
+kmersOverlapDifference: 4
+genome length: 5386
+---------
+edges: 5378
+vertices: 4921
+de Bruijn graph building: 0.011237351
+finding eulerian path: 0.05519866
+INPUT differs from RESULT
+longest common substring: 94
+whole operation: 0.239940983
+one k-mer length: 9
+kmersOverlapLength: 8
+kmersOverlapDifference: 1
+genome length: 5386
+---------
+edges: 5378
+vertices: 4921
+de Bruijn graph building: 0.005712407
+finding eulerian path: 0.046396797
+INPUT differs from RESULT
+longest common substring: 94
+whole operation: 0.246699864
+one k-mer length: 9
+kmersOverlapLength: 8
+kmersOverlapDifference: 2
+genome length: 5386
+---------
+edges: 5378
+vertices: 4921
+de Bruijn graph building: 0.004581889
+finding eulerian path: 0.045207957
+INPUT differs from RESULT
+longest common substring: 94
+whole operation: 0.25080946
+one k-mer length: 9
+kmersOverlapLength: 8
+kmersOverlapDifference: 3
+genome length: 5386
+---------
+edges: 5378
+vertices: 4921
+de Bruijn graph building: 0.004552814
+finding eulerian path: 0.036869046
+INPUT differs from RESULT
+longest common substring: 94
+whole operation: 0.238257549
+one k-mer length: 9
+kmersOverlapLength: 8
+kmersOverlapDifference: 4
+genome length: 5386
+---------
+edges: 5378
+vertices: 4921
+de Bruijn graph building: 0.00721726
+finding eulerian path: 0.035036179
+INPUT differs from RESULT
+longest common substring: 94
+whole operation: 0.2349255
+one k-mer length: 9
+kmersOverlapLength: 8
+kmersOverlapDifference: 5
+genome length: 5386
+---------
+edges: 5378
+vertices: 4921
+de Bruijn graph building: 0.009595837
+finding eulerian path: 0.036190561
+INPUT differs from RESULT
+longest common substring: 94
+whole operation: 0.241640635
+one k-mer length: 9
+kmersOverlapLength: 8
+kmersOverlapDifference: 6
+genome length: 5386
+---------
+edges: 5378
+vertices: 4921
+de Bruijn graph building: 0.007845751
+finding eulerian path: 0.039133097
+INPUT differs from RESULT
+longest common substring: 94
+whole operation: 0.25479104
+one k-mer length: 9
+kmersOverlapLength: 8
+kmersOverlapDifference: 7
+genome length: 5386
+---------
+edges: 5378
+vertices: 4921
+de Bruijn graph building: 0.004554591
+finding eulerian path: 0.038165713
+INPUT differs from RESULT
+longest common substring: 94
+whole operation: 0.22176987
+one k-mer length: 9
+kmersOverlapLength: 8
+kmersOverlapDifference: 8
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004420812
+finding eulerian path: 0.027541697
+INPUT equals RESULT
+whole operation: 0.032525155
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 1
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004423119
+finding eulerian path: 0.027471184
+INPUT equals RESULT
+whole operation: 0.032448089
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 2
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004454097
+finding eulerian path: 0.028029218
+INPUT equals RESULT
+whole operation: 0.033037248
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 3
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.00439909
+finding eulerian path: 0.02868228
+INPUT equals RESULT
+whole operation: 0.033679121
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 4
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004412856
+finding eulerian path: 0.028490337
+INPUT equals RESULT
+whole operation: 0.033447015
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 5
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004681454
+finding eulerian path: 0.029476741
+INPUT equals RESULT
+whole operation: 0.036194243
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 6
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004492349
+finding eulerian path: 0.026877868
+INPUT equals RESULT
+whole operation: 0.031949215
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 7
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004421839
+finding eulerian path: 0.027767929
+INPUT equals RESULT
+whole operation: 0.032736794
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 8
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004448179
+finding eulerian path: 0.028325998
+INPUT equals RESULT
+whole operation: 0.033325377
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 9
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004463638
+finding eulerian path: 0.028824811
+INPUT equals RESULT
+whole operation: 0.03384007
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 10
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004411915
+finding eulerian path: 0.026982783
+INPUT equals RESULT
+whole operation: 0.031947252
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 11
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004428508
+finding eulerian path: 0.027330773
+INPUT equals RESULT
+whole operation: 0.032310663
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 12
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004474852
+finding eulerian path: 0.028286353
+INPUT equals RESULT
+whole operation: 0.033310765
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 13
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004432112
+finding eulerian path: 0.026868006
+INPUT equals RESULT
+whole operation: 0.03186736
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 14
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004437118
+finding eulerian path: 0.02694369
+INPUT equals RESULT
+whole operation: 0.031933408
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 15
+genome length: 5386
+---------
+edges: 5370
+vertices: 5371
+de Bruijn graph building: 0.004424548
+finding eulerian path: 0.028544514
+INPUT equals RESULT
+whole operation: 0.033515055
+one k-mer length: 17
+kmersOverlapLength: 16
+kmersOverlapDifference: 16
+genome length: 5386

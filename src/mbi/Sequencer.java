@@ -43,17 +43,21 @@ public class Sequencer {
 		sequence = builder.toString();
 	}
 
-	public List<String> shotgun(int oneKmerLength) {
+	public List<String> shotgun(int oneKmerLength, int kmersOverlapLength) {
 		List<String> results = new LinkedList<String>();
-		for (int i = 0; i <= sequence.length() - oneKmerLength; ++i) {
+		for (int i = 0; i <= sequence.length() - oneKmerLength; i = i + (oneKmerLength-kmersOverlapLength)) {
 			results.add(sequence.substring(i, i + oneKmerLength));
 		}
-		Collections.shuffle(results);
+		//Collections.shuffle(results);
 		return results;
+	}
+	
+	public List<String> shotgun(int oneKmerLength) {
+		return shotgun(oneKmerLength, oneKmerLength-1);
 	}
 
 	public static DeBruijnGraph getDeBruijnGraph(Collection<String> kmers,
-			boolean allowRepeatedEdges) {
+			boolean allowRepeatedEdges) throws IOException {
 		DeBruijnGraph graph = new DeBruijnGraph();
 		graph.setGraph(graph);
 		for (String kmer : kmers) {
@@ -72,12 +76,14 @@ public class Sequencer {
 				graph.addEdge(graph.createEdge(lo,ld),lo,ld);
 			}
 		}
+		Helpers.log("edges: " + Integer.toString(graph.getEdgeCount()));
+		Helpers.log("vertices: " + Integer.toString(graph.getVertexCount()));
 		//System.out.println(graph.toString()); // mo�na sobie zerkn�� czy nie oszukuje ;)
 		return graph;
 
 	}
 
-	public void buildDeBruijnGraph (List<String> kmers) {
+	public void buildDeBruijnGraph (List<String> kmers) throws IOException {
 		deBruijnGraph = getDeBruijnGraph(kmers, true);
 	}
 	
