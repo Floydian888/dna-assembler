@@ -117,18 +117,19 @@ public class Tests {
 				//Helpers.log("RESULT: " + resultSequence);
 			}
 			
-			if(inputSequence.equals(resultSequence))
-			{}//Helpers.log("INPUT equals RESULT");
+			if(inputSequence.equals(resultSequence)) {
+				Helpers.log("INPUT equals RESULT");
+			}
 			else {
-				//Helpers.log("INPUT differs from RESULT");
+				Helpers.log("INPUT differs from RESULT");
 				Helpers.log("" + longestSubstr(inputSequence, resultSequence));
 			}
 			
 			
 		} catch (MbiException e) {
-			//Helpers.log("Exception: " + e.getMessage());
+			Helpers.log("Exception: " + e.getMessage());
 		} catch (Exception e) {
-			//Helpers.log("Exception: " + e.getMessage());
+			Helpers.log("Exception: " + e.getMessage());
 		}
 
 		return resultSequence;
@@ -195,53 +196,48 @@ public class Tests {
 		while(i < end);
 	}
 	
-	@Test
+	//@Test
 	public void phiX174_constOverlap() throws Exception {
 		testWithConstOverlap("phiX174-1line.txt");
 	}
 	
-	//@Test
-	public void phiX174() throws Exception {
-		int kmerLength = 0;
-		String fileName = "phiX174-1line.txt";
+	private void testWithVariableOverlap(String fileName) throws Exception {
 		String pathToFile = pathToGenomeData + fileName;
-		//Helpers.log(bigSeparator);
-		//Helpers.log(getCurrentDate());
-		//Helpers.log("file name: " + fileName);
 		
+		Helpers.log("");
+		
+		// Helpers.log(bigSeparator);
+		// Helpers.log(getCurrentDate());
+		// Helpers.log("file name: " + fileName);
+
+		int kmerLength = 10;
 		int kmersOverlapLength;
-		int kmersOverlapDifference;
 		
-		int i = 2;
 		String inputSequence = null;
-		
-		do {
-			kmerLength = i;
-			for (int j = 1; j < kmerLength; ++j) {
-				kmersOverlapDifference = j;
-				kmersOverlapLength = i - kmersOverlapDifference;
-				
-				//Helpers.log(smallSeparator);
-				
-				AssembleFromFileCommand assembleFromFileCommand = new AssembleFromFileCommand(
-						System.getProperty("user.dir") + pathToFile,
-						kmerLength, kmersOverlapLength);
-				
-				timeMeasureHandler.executeAndMeasure(assembleFromFileCommand, "whole operation");
-				inputSequence = assembleFromFileCommand.getInputSequence();
 
-				//Helpers.log("one k-mer length: " + kmerLength);
-				//Helpers.log("kmersOverlapLength: " + kmersOverlapLength);
-				//Helpers.log("kmersOverlapDifference: " + kmersOverlapDifference);
+		for (int i = 0; i < kmerLength; i++) {
+			kmersOverlapLength = i;
 
-				//Helpers.log("genome length: " + inputSequence.length());
+			// Helpers.log(smallSeparator);
 
-				i = i + 1;
-			}
-		} while (i < 22);
+			AssembleFromFileCommand assembleFromFileCommand = new AssembleFromFileCommand(
+					System.getProperty("user.dir") + pathToFile, kmerLength,
+					kmersOverlapLength);
 
-		
-		//assertTrue(inputSequence.equals(resultSequence));
+			timeMeasureHandler.executeAndMeasure(assembleFromFileCommand, "whole operation");
+			inputSequence = assembleFromFileCommand.getInputSequence();
+
+			// Helpers.log("one k-mer length: " + kmerLength);
+			 Helpers.log("kmersOverlapLength: " + kmersOverlapLength);
+			// Helpers.log("kmersOverlapDifference: " + kmersOverlapDifference);
+
+			// Helpers.log("genome length: " + inputSequence.length());
+		}
+	}
+	
+	@Test
+	public void phiX174_variableOverlap() throws Exception {
+		testWithVariableOverlap("phiX174-1line.txt");
 	}
 	
 	//@Test

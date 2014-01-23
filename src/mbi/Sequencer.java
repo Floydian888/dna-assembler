@@ -64,16 +64,17 @@ public class Sequencer {
 			int s = 0;
 			int e = kmer.length();
 
-			String lo = kmer.substring(s, e - 1);
-			String ld = kmer.substring(s + 1, e);
-			if (!graph.containsVertex(lo)) {
-				graph.addVertex(lo);
+			// for kmer AGTA beggining is AGT end is GTA
+			String beggining = kmer.substring(s, e - 1);
+			String end = kmer.substring(s + 1, e);
+			if (!graph.containsVertex(beggining)) {
+				graph.addVertex(beggining);
 			}
-			if (!graph.containsVertex(ld)) {
-				graph.addVertex(ld);
+			if (!graph.containsVertex(end)) {
+				graph.addVertex(end);
 			}
-			if (!graph.containsEdge(graph.findEdge(lo,ld)) || allowRepeatedEdges) {
-				graph.addEdge(graph.createEdge(lo,ld),lo,ld);
+			if (!graph.containsEdge(graph.findEdge(beggining,end)) || allowRepeatedEdges) {
+				graph.addEdge(graph.createEdge(beggining,end),beggining,end);
 			}
 		}
 		//Helpers.log("edges: " + Integer.toString(graph.getEdgeCount()));

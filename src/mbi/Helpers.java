@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 public class Helpers {
 
 	private static boolean doLog = true;
-	private static final String pathToFile = "/log/log5.txt";
+	private static final String pathToFile = "/log/log-michal-1.txt";
 
 	private static void appendToLogFile(String message) throws IOException {
 		if (doLog) {

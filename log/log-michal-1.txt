@@ -1,0 +1,86 @@
+
+Exception: input edge may not be null
+kmersOverlapLength: 0
+Exception: input edge may not be null
+kmersOverlapLength: 1
+Exception: input edge may not be null
+kmersOverlapLength: 2
+Exception: input edge may not be null
+kmersOverlapLength: 3
+Exception: input edge may not be null
+kmersOverlapLength: 4
+Exception: input edge may not be null
+kmersOverlapLength: 5
+Exception: input edge may not be null
+kmersOverlapLength: 6
+Exception: input edge may not be null
+kmersOverlapLength: 7
+Exception: input edge may not be null
+kmersOverlapLength: 8
+Exception: input edge may not be null
+kmersOverlapLength: 9
+
+Exception: Imbalanced graph given
+kmersOverlapLength: 0
+Exception: Imbalanced graph given
+kmersOverlapLength: 1
+Exception: Imbalanced graph given
+kmersOverlapLength: 2
+Exception: Imbalanced graph given
+kmersOverlapLength: 3
+Exception: Imbalanced graph given
+kmersOverlapLength: 4
+Exception: Imbalanced graph given
+kmersOverlapLength: 5
+Exception: Imbalanced graph given
+kmersOverlapLength: 6
+Exception: Imbalanced graph given
+kmersOverlapLength: 7
+Exception: Imbalanced graph given
+kmersOverlapLength: 8
+INPUT differs from RESULT
+344
+kmersOverlapLength: 9
+
+Exception: Imbalanced graph given
+kmersOverlapLength: 0
+Exception: Imbalanced graph given
+kmersOverlapLength: 1
+Exception: Imbalanced graph given
+kmersOverlapLength: 2
+Exception: Imbalanced graph given
+kmersOverlapLength: 3
+Exception: Imbalanced graph given
+kmersOverlapLength: 4
+Exception: Imbalanced graph given
+kmersOverlapLength: 5
+Exception: Imbalanced graph given
+kmersOverlapLength: 6
+Exception: Imbalanced graph given
+kmersOverlapLength: 7
+Exception: Imbalanced graph given
+kmersOverlapLength: 8
+Exception: Imbalanced graph given
+kmersOverlapLength: 9
+
+Exception: Imbalanced graph given
+kmersOverlapLength: 0
+Exception: Imbalanced graph given
+kmersOverlapLength: 1
+Exception: Imbalanced graph given
+kmersOverlapLength: 2
+Exception: Imbalanced graph given
+kmersOverlapLength: 3
+Exception: Imbalanced graph given
+kmersOverlapLength: 4
+Exception: Imbalanced graph given
+kmersOverlapLength: 5
+Exception: Imbalanced graph given
+kmersOverlapLength: 6
+Exception: Imbalanced graph given
+kmersOverlapLength: 7
+Exception: Imbalanced graph given
+kmersOverlapLength: 8
+INPUT differs from RESULT
+344
+kmersOverlapLength: 9
