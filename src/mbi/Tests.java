@@ -1,7 +1,5 @@
 package mbi;
 
-import static org.junit.Assert.*;
-
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -99,8 +97,8 @@ public class Tests {
 		String resultSequence = null;
 
 		if (logAlgorithmData) {
-			Helpers.log("K-MERS: " + kmers.toString());
-			Helpers.log("INPUT:  " + inputSequence);
+			//Helpers.log("K-MERS: " + kmers.toString());
+			//Helpers.log("INPUT:  " + inputSequence);
 		}
 
 		try {
@@ -111,26 +109,26 @@ public class Tests {
 			
 			long elapsedTime = System.nanoTime() - startTime;
 			double elapsedTimeInSeconds = (double)elapsedTime / 1000000000.0;
-			Helpers.log("de Bruijn graph building", Double.toString(elapsedTimeInSeconds));
+			//Helpers.log("de Bruijn graph building", Double.toString(elapsedTimeInSeconds));
 			
 			resultSequence = timeMeasureHandler.executeAndMeasure(new AssembleCommand(sequencer), "finding eulerian path");
 
 			if (logAlgorithmData) {
-				Helpers.log("RESULT: " + resultSequence);
+				//Helpers.log("RESULT: " + resultSequence);
 			}
 			
 			if(inputSequence.equals(resultSequence))
-				Helpers.log("INPUT equals RESULT");
+			{}//Helpers.log("INPUT equals RESULT");
 			else {
-				Helpers.log("INPUT differs from RESULT");
-				Helpers.log("longest common substring: " + longestSubstr(inputSequence, resultSequence));
+				//Helpers.log("INPUT differs from RESULT");
+				Helpers.log("" + longestSubstr(inputSequence, resultSequence));
 			}
 			
 			
 		} catch (MbiException e) {
-			Helpers.log("Exception: " + e.getMessage());
+			//Helpers.log("Exception: " + e.getMessage());
 		} catch (Exception e) {
-			Helpers.log("Exception: " + e.getMessage());
+			//Helpers.log("Exception: " + e.getMessage());
 		}
 
 		return resultSequence;
@@ -161,9 +159,9 @@ public class Tests {
 		int kmerLength = 0;
 		String fileName = "phiX174-1line.txt";
 		String pathToFile = pathToGenomeData + fileName;
-		Helpers.log(bigSeparator);
-		Helpers.log(getCurrentDate());
-		Helpers.log("file name: " + fileName);
+		//Helpers.log(bigSeparator);
+		//Helpers.log(getCurrentDate());
+		//Helpers.log("file name: " + fileName);
 		
 		int kmersOverlapLength;
 		int kmersOverlapDifference;
@@ -177,7 +175,7 @@ public class Tests {
 				kmersOverlapDifference = j;
 				kmersOverlapLength = i - kmersOverlapDifference;
 				
-				Helpers.log(smallSeparator);
+				//Helpers.log(smallSeparator);
 				
 				AssembleFromFileCommand assembleFromFileCommand = new AssembleFromFileCommand(
 						System.getProperty("user.dir") + pathToFile,
@@ -186,11 +184,11 @@ public class Tests {
 				timeMeasureHandler.executeAndMeasure(assembleFromFileCommand, "whole operation");
 				inputSequence = assembleFromFileCommand.getInputSequence();
 
-				Helpers.log("one k-mer length: " + kmerLength);
-				Helpers.log("kmersOverlapLength: " + kmersOverlapLength);
-				Helpers.log("kmersOverlapDifference: " + kmersOverlapDifference);
+				//Helpers.log("one k-mer length: " + kmerLength);
+				//Helpers.log("kmersOverlapLength: " + kmersOverlapLength);
+				//Helpers.log("kmersOverlapDifference: " + kmersOverlapDifference);
 
-				Helpers.log("genome length: " + inputSequence.length());
+				//Helpers.log("genome length: " + inputSequence.length());
 
 				i = i + 1;
 			}

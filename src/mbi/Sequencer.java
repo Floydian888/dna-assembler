@@ -76,8 +76,8 @@ public class Sequencer {
 				graph.addEdge(graph.createEdge(lo,ld),lo,ld);
 			}
 		}
-		Helpers.log("edges: " + Integer.toString(graph.getEdgeCount()));
-		Helpers.log("vertices: " + Integer.toString(graph.getVertexCount()));
+		//Helpers.log("edges: " + Integer.toString(graph.getEdgeCount()));
+		//Helpers.log("vertices: " + Integer.toString(graph.getVertexCount()));
 		//System.out.println(graph.toString()); // mo�na sobie zerkn�� czy nie oszukuje ;)
 		return graph;
 
