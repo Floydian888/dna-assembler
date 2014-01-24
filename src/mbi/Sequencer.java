@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -43,7 +45,9 @@ public class Sequencer {
 		sequence = builder.toString();
 	}
 
-	public List<String> shotgun(int oneKmerLength, int kmersOverlapLength) {
+	public List<String> shotgun(int oneKmerLength, int kmersOverlapLength) throws IOException {
+		Logger.log("oneKmerLength: " + oneKmerLength);
+		Logger.log("kmersOverlapLength: " + kmersOverlapLength);
 		List<String> results = new LinkedList<String>();
 		for (int i = 0; i <= sequence.length() - oneKmerLength; i = i + (oneKmerLength-kmersOverlapLength)) {
 			results.add(sequence.substring(i, i + oneKmerLength));
@@ -52,40 +56,93 @@ public class Sequencer {
 		return results;
 	}
 	
-	public List<String> shotgun(int oneKmerLength) {
+	public List<String> shotgun(int oneKmerLength) throws IOException {
 		return shotgun(oneKmerLength, oneKmerLength-1);
 	}
+	
+/*	public List<String> shotgun(int oneKmerLength, int kmersOverlapLength) throws IOException {
+		return Arrays.asList("AAABA","ABAAB","BAABA","AABAB");
+	}*/
 
-	public static DeBruijnGraph getDeBruijnGraph(Collection<String> kmers,
-			boolean allowRepeatedEdges) throws IOException {
+	private static int countOccurrences(String string, String subString) {
+
+		int lastIndex = 0;
+		int count = 0;
+
+		while(lastIndex != -1){
+
+		       lastIndex = string.indexOf(subString,lastIndex);
+
+		       if( lastIndex != -1){
+		             count++;
+		             lastIndex++;
+		      }
+		}
+		return count;
+	}
+	
+	private static String getVertex(DeBruijnGraph graph, int index) {
+		return graph.getVertices().toArray()[index].toString();
+	}
+	
+	public static DeBruijnGraph getDeBruijnGraph(String inputSequence, Collection<String> kmers, boolean allowRepeatedEdges,
+			int vertexStringLength ) throws IOException, MbiException {
 		DeBruijnGraph graph = new DeBruijnGraph();
 		graph.setGraph(graph);
-		for (String kmer : kmers) {
-			int s = 0;
-			int e = kmer.length();
+		try {
+			for (String kmer : kmers) {
+//				Logger.log("kmer: " + kmer);
+				for (int i = 0; i <= (kmer.length() - vertexStringLength); i++) {
+					String vertexString = kmer.substring(i, i + vertexStringLength);
+					if (!graph.containsVertex(vertexString)) {
+						graph.addVertex(vertexString);
+					}
+//					Logger.log(vertexString);
+				}
+			}
+			
+			for (int i = 0; i < graph.getVertexCount(); ++i) {
+				for (int j = 0; j < graph.getVertexCount(); ++j) {
+					
+					String firstVertex = getVertex(graph, i);
+					String secondVertex = getVertex(graph, j);
 
-			// for kmer AGTA beggining is AGT end is GTA
-			String beggining = kmer.substring(s, e - 1);
-			String end = kmer.substring(s + 1, e);
-			if (!graph.containsVertex(beggining)) {
-				graph.addVertex(beggining);
+					if(firstVertex.length() != secondVertex.length())
+						throw new MbiException("Vertices with strings of different length!");
+					
+					int length = firstVertex.length();
+					
+					if(firstVertex.substring(1, length).equals(secondVertex.substring(0, length-1))) {
+						String lastLetterOfSecondVertex = secondVertex.substring(secondVertex.length()-1);
+						String string =  firstVertex + lastLetterOfSecondVertex;
+						int occurrencesNumber = countOccurrences(inputSequence, string);
+						
+//						Logger.log("---");
+//						Logger.log("firstVertex: " + firstVertex);
+//						Logger.log("secondVertex: " + secondVertex);
+//						Logger.log("lastLetterOfSecondVertex: " + lastLetterOfSecondVertex);
+//						Logger.log("string: " + string);
+//						Logger.log("occurrencesNumber: " + occurrencesNumber);
+						
+						for (int k = 0; k < occurrencesNumber; k++) {
+							String edge = graph.createEdge(firstVertex, secondVertex);
+							if(edge != null)
+								graph.addEdge(edge, firstVertex, secondVertex);
+						}
+					}
+				}
 			}
-			if (!graph.containsVertex(end)) {
-				graph.addVertex(end);
-			}
-			if (!graph.containsEdge(graph.findEdge(beggining,end)) || allowRepeatedEdges) {
-				graph.addEdge(graph.createEdge(beggining,end),beggining,end);
-			}
+		} finally {
+			Logger.log("edges: " + Integer.toString(graph.getEdgeCount()));
+			Logger.log("vertices: " + Integer.toString(graph.getVertexCount()));
 		}
-		//Helpers.log("edges: " + Integer.toString(graph.getEdgeCount()));
-		//Helpers.log("vertices: " + Integer.toString(graph.getVertexCount()));
-		//System.out.println(graph.toString()); // mo�na sobie zerkn�� czy nie oszukuje ;)
+//		Logger.log(graph.toString()); // mo�na sobie zerkn�� czy nie oszukuje ;)
 		return graph;
 
 	}
 
-	public void buildDeBruijnGraph (List<String> kmers) throws IOException {
-		deBruijnGraph = getDeBruijnGraph(kmers, true);
+	public void buildDeBruijnGraph (String inputSequence, List<String> kmers, int graphDegree) throws IOException, MbiException {
+		deBruijnGraph = getDeBruijnGraph(inputSequence, kmers, true, graphDegree-1);
 	}
 	
 	public String assemble()

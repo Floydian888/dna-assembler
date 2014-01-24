@@ -1,0 +1,101 @@
+
+---------
+K-MERS: [AAABA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+kmer: AAABA
+AAA
+AAB
+ABA
+kmer: ABAAB
+ABA
+BAA
+AAB
+kmer: BAABA
+BAA
+AAB
+ABA
+kmer: AABAB
+AAB
+ABA
+BAB
+edges: 8
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] BAAB(2)[BAA,AAB] AAAB[AAA,AAB] AABA(2)[AAB,ABA] AABA(3)[AAB,ABA] ABAA[ABA,BAA] ABAB[ABA,BAB] AABA[AAB,ABA] 
+Exception: Imbalanced graph given
+kmersOverlapLength: 1
+---------
+K-MERS: [AAABA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+kmer: AAABA
+AAA
+AAB
+ABA
+kmer: ABAAB
+ABA
+BAA
+AAB
+kmer: BAABA
+BAA
+AAB
+ABA
+kmer: AABAB
+AAB
+ABA
+BAB
+edges: 8
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] BAAB(2)[BAA,AAB] AAAB[AAA,AAB] AABA(2)[AAB,ABA] AABA(3)[AAB,ABA] ABAA[ABA,BAA] ABAB[ABA,BAB] AABA[AAB,ABA] 
+Exception: Imbalanced graph given
+kmersOverlapLength: 2
+---------
+K-MERS: [AAABA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+kmer: AAABA
+AAA
+AAB
+ABA
+kmer: ABAAB
+ABA
+BAA
+AAB
+kmer: BAABA
+BAA
+AAB
+ABA
+kmer: AABAB
+AAB
+ABA
+BAB
+edges: 8
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] BAAB(2)[BAA,AAB] AAAB[AAA,AAB] AABA(2)[AAB,ABA] AABA(3)[AAB,ABA] ABAA[ABA,BAA] ABAB[ABA,BAB] AABA[AAB,ABA] 
+Exception: Imbalanced graph given
+kmersOverlapLength: 3
+---------
+K-MERS: [AAABA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+kmer: AAABA
+AAA
+AAB
+ABA
+kmer: ABAAB
+ABA
+BAA
+AAB
+kmer: BAABA
+BAA
+AAB
+ABA
+kmer: AABAB
+AAB
+ABA
+BAB
+edges: 8
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] BAAB(2)[BAA,AAB] AAAB[AAA,AAB] AABA(2)[AAB,ABA] AABA(3)[AAB,ABA] ABAA[ABA,BAA] ABAB[ABA,BAB] AABA[AAB,ABA] 
+Exception: Imbalanced graph given
+kmersOverlapLength: 4

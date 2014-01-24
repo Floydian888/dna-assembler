@@ -1,0 +1,47 @@
+
+oneKmerLength: 10
+kmersOverlapLength: 1
+
+oneKmerLength: 10
+kmersOverlapLength: 1
+edges: 149
+vertices: 1174
+Exception: Imbalanced graph given
+kmersOverlapLength: 1
+oneKmerLength: 10
+kmersOverlapLength: 4
+edges: 149
+vertices: 1174
+Exception: Imbalanced graph given
+kmersOverlapLength: 1
+oneKmerLength: 10
+kmersOverlapLength: 4
+
+oneKmerLength: 5
+kmersOverlapLength: 1
+edges: 5
+vertices: 4
+INPUT differs from RESULT
+longest: 5
+kmersOverlapLength: 1
+oneKmerLength: 5
+kmersOverlapLength: 2
+edges: 3
+vertices: 3
+INPUT differs from RESULT
+longest: 4
+kmersOverlapLength: 2
+oneKmerLength: 5
+kmersOverlapLength: 3
+edges: 5
+vertices: 4
+INPUT differs from RESULT
+longest: 5
+kmersOverlapLength: 3
+oneKmerLength: 5
+kmersOverlapLength: 4
+edges: 8
+vertices: 5
+INPUT differs from RESULT
+longest: 6
+kmersOverlapLength: 4

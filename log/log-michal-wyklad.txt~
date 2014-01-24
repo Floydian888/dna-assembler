@@ -1,0 +1,99 @@
+kmersOverlapLength: 4
+
+---------
+oneKmerLength: 5
+kmersOverlapLength: 1
+K-MERS: [AAABA, AABAB]
+INPUT:  AAABAABAB
+edges: 5
+vertices: 4
+Vertices:ABA,AAA,AAB,BAB
+Edges:AAAA[AAA,AAA] AAAB[AAA,AAB] AABA[AAB,ABA] ABAB[ABA,BAB] BABA[BAB,ABA] 
+RESULT: AAAABABA
+INPUT differs from RESULT
+longest: 5
+kmersOverlapLength: 1
+---------
+oneKmerLength: 5
+kmersOverlapLength: 2
+K-MERS: [AAABA, BAABA]
+INPUT:  AAABAABAB
+edges: 3
+vertices: 3
+Vertices:ABA,AAA,BAA
+Edges:AAAA[AAA,AAA] BAAA[BAA,AAA] ABAA[ABA,BAA] 
+RESULT: ABAAAA
+INPUT differs from RESULT
+longest: 4
+kmersOverlapLength: 2
+---------
+oneKmerLength: 5
+kmersOverlapLength: 3
+K-MERS: [AAABA, ABAAB, AABAB]
+INPUT:  AAABAABAB
+edges: 5
+vertices: 4
+Vertices:ABA,AAA,AAB,BAB
+Edges:AAAA[AAA,AAA] AAAB[AAA,AAB] AABA[AAB,ABA] ABAB[ABA,BAB] BABA[BAB,ABA] 
+RESULT: AAAABABA
+INPUT differs from RESULT
+longest: 5
+kmersOverlapLength: 3
+---------
+oneKmerLength: 5
+kmersOverlapLength: 4
+K-MERS: [AAABA, AABAA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+edges: 8
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] AAAA[AAA,AAA] AAAB[AAA,AAB] BAAA[BAA,AAA] ABAA[ABA,BAA] AABA[AAB,ABA] ABAB[ABA,BAB] BABA[BAB,ABA] 
+RESULT: BAABABAAAAB
+INPUT differs from RESULT
+longest: 6
+kmersOverlapLength: 4
+
+---------
+K-MERS: [AAABA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+edges: 8
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] AAAA[AAA,AAA] AAAB[AAA,AAB] BAAA[BAA,AAA] ABAA[ABA,BAA] AABA[AAB,ABA] ABAB[ABA,BAB] BABA[BAB,ABA] 
+RESULT: BAABABAAAAB
+INPUT differs from RESULT
+longest: 6
+kmersOverlapLength: 1
+---------
+K-MERS: [AAABA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+edges: 8
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] AAAA[AAA,AAA] AAAB[AAA,AAB] BAAA[BAA,AAA] ABAA[ABA,BAA] AABA[AAB,ABA] ABAB[ABA,BAB] BABA[BAB,ABA] 
+RESULT: BAABABAAAAB
+INPUT differs from RESULT
+longest: 6
+kmersOverlapLength: 2
+---------
+K-MERS: [AAABA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+edges: 8
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] AAAA[AAA,AAA] AAAB[AAA,AAB] BAAA[BAA,AAA] ABAA[ABA,BAA] AABA[AAB,ABA] ABAB[ABA,BAB] BABA[BAB,ABA] 
+RESULT: BAABABAAAAB
+INPUT differs from RESULT
+longest: 6
+kmersOverlapLength: 3
+---------
+K-MERS: [AAABA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+edges: 8
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] AAAA[AAA,AAA] AAAB[AAA,AAB] BAAA[BAA,AAA] ABAA[ABA,BAA] AABA[AAB,ABA] ABAB[ABA,BAB] BABA[BAB,ABA] 
+RESULT: BAABABAAAAB
+INPUT differs from RESULT
+longest: 6
+kmersOverlapLength: 4

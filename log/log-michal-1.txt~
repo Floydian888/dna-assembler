@@ -1,0 +1,88 @@
+
+oneKmerLength: 5
+kmersOverlapLength: 0
+K-MERS: [AAABA]
+INPUT:  AAABAABAB
+kmer: AAABA
+beggining: AAA
+end: ABA
+edges: 1
+vertices: 2
+Exception: Imbalanced graph given
+kmersOverlapLength: 0
+oneKmerLength: 5
+kmersOverlapLength: 1
+K-MERS: [AAABA, AABAB]
+INPUT:  AAABAABAB
+kmer: AAABA
+beggining: AAA
+end: ABA
+kmer: AABAB
+beggining: AAB
+end: BAB
+edges: 5
+vertices: 4
+RESULT: AAAABABA
+INPUT differs from RESULT
+5
+kmersOverlapLength: 1
+oneKmerLength: 5
+kmersOverlapLength: 2
+K-MERS: [AAABA, BAABA]
+INPUT:  AAABAABAB
+kmer: AAABA
+beggining: AAA
+end: ABA
+kmer: BAABA
+beggining: BAA
+end: ABA
+edges: 3
+vertices: 3
+RESULT: ABAAAA
+INPUT differs from RESULT
+4
+kmersOverlapLength: 2
+oneKmerLength: 5
+kmersOverlapLength: 3
+K-MERS: [AAABA, ABAAB, AABAB]
+INPUT:  AAABAABAB
+kmer: AAABA
+beggining: AAA
+end: ABA
+kmer: ABAAB
+beggining: ABA
+end: AAB
+kmer: AABAB
+beggining: AAB
+end: BAB
+edges: 5
+vertices: 4
+RESULT: AAAABABA
+INPUT differs from RESULT
+5
+kmersOverlapLength: 3
+oneKmerLength: 5
+kmersOverlapLength: 4
+K-MERS: [AAABA, AABAA, ABAAB, BAABA, AABAB]
+INPUT:  AAABAABAB
+kmer: AAABA
+beggining: AAA
+end: ABA
+kmer: AABAA
+beggining: AAB
+end: BAA
+kmer: ABAAB
+beggining: ABA
+end: AAB
+kmer: BAABA
+beggining: BAA
+end: ABA
+kmer: AABAB
+beggining: AAB
+end: BAB
+edges: 8
+vertices: 5
+RESULT: BAABABAAAAB
+INPUT differs from RESULT
+6
+kmersOverlapLength: 4
