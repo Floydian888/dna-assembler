@@ -10,6 +10,8 @@ import org.junit.Test;
 
 public class Tests {
 	
+	private static Logger logger = new Logger();
+	
 	TimeMeasureHandler timeMeasureHandler = new TimeMeasureHandler();
 	
 	private final String bigSeparator = "=================";
@@ -117,18 +119,18 @@ public class Tests {
 //			Logger.log("RESULT: " + resultSequence);
 			
 			if(inputSequence.equals(resultSequence)) {
-				Logger.log("INPUT equals RESULT");
+				logger.log("INPUT equals RESULT");
 			}
 			else {
-				Logger.log("INPUT differs from RESULT");
-				Logger.log("longest: " + longestSubstr(inputSequence, resultSequence));
+				logger.log("INPUT differs from RESULT");
+				logger.log("longest: " + longestSubstr(inputSequence, resultSequence));
 			}
 			
 			
 		} catch (MbiException e) {
-			Logger.log("Exception: " + e.getMessage());
+			logger.log("Exception: " + e.getMessage());
 		} catch (Exception e) {
-			Logger.log("Exception: " + e.getMessage());
+			logger.log("Exception: " + e.getMessage());
 		}
 
 		return resultSequence;
@@ -158,14 +160,14 @@ public class Tests {
 		String pathToFile = pathToGenomeData + fileName;
 		
 		// Logger.log(bigSeparator);
-		// Logger.log(getCurrentDate());
-		// Logger.log("file name: " + fileName);
+		 logger.log(getCurrentDate());
+		 logger.log("file name: " + fileName);
 
 		int kmerLength = 0;
 		int kmersOverlapLength;
 
-		int start = 8;
-		int end = 10;
+		int start = 20;
+		int end = 20;
 		
 		int i = start;
 		String inputSequence = null;
@@ -183,16 +185,21 @@ public class Tests {
 			timeMeasureHandler.executeAndMeasure(assembleFromFileCommand, "whole operation");
 			inputSequence = assembleFromFileCommand.getInputSequence();
 
-			// Logger.log("one k-mer length: " + kmerLength);
+			logger.log("one k-mer length: " + kmerLength);
 			// Logger.log("kmersOverlapLength: " + kmersOverlapLength);
 			// Logger.log("kmersOverlapDifference: " + kmersOverlapDifference);
 
-			// Logger.log("genome length: " + inputSequence.length());
+			 logger.log("genome length: " + inputSequence.length());
 
 			i = i + 1;
 
 		}
 		while(i < end);
+	}
+	
+	@Test
+	public void porcine_constOverlapVariableLength() throws Exception {
+		test_constOverlapVariableLength("porcine-1line.txt");
 	}
 	
 	//@Test
@@ -203,7 +210,7 @@ public class Tests {
 	private void test_variableOverlapConstLength(String fileName) throws Exception {
 		String pathToFile = pathToGenomeData + fileName;
 		
-		Logger.log("");
+		logger.log("");
 		
 		// Logger.log(bigSeparator);
 		// Logger.log(getCurrentDate());
@@ -217,7 +224,7 @@ public class Tests {
 		//for (int i = 1; i < kmerLength; ++i) {
 			kmersOverlapLength = 12;
 
-			 Logger.log(smallSeparator);
+			 logger.log(smallSeparator);
 
 			AssembleFromFileCommand assembleFromFileCommand = new AssembleFromFileCommand(
 					System.getProperty("user.dir") + pathToFile, kmerLength,
@@ -226,17 +233,19 @@ public class Tests {
 			timeMeasureHandler.executeAndMeasure(assembleFromFileCommand, "whole operation");
 			inputSequence = assembleFromFileCommand.getInputSequence();
 
-			 Logger.log("one k-mer length: " + kmerLength);
-			 Logger.log("kmersOverlapLength: " + kmersOverlapLength);
+			 logger.log("one k-mer length: " + kmerLength);
+			 logger.log("kmersOverlapLength: " + kmersOverlapLength);
 
-			 Logger.log("genome length: " + inputSequence.length());
+			 logger.log("genome length: " + inputSequence.length());
 //		}
 	}
 	
-	@Test
+	//@Test
 	public void phiX174_variableOverlapConstLength() throws Exception {
 		test_variableOverlapConstLength("phiX174-1line.txt");
 	}
+	
+	
 	
 	//@Test
 	public void ecoli() {

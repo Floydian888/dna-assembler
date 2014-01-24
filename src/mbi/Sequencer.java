@@ -16,6 +16,7 @@ import java.util.List;
 
 public class Sequencer {
 
+	private static Logger logger = new Logger();
 	private String sequence;
 	private DeBruijnGraph deBruijnGraph; 
 
@@ -46,8 +47,8 @@ public class Sequencer {
 	}
 
 	public List<String> shotgun(int oneKmerLength, int kmersOverlapLength) throws IOException {
-		Logger.log("oneKmerLength: " + oneKmerLength);
-		Logger.log("kmersOverlapLength: " + kmersOverlapLength);
+		logger.log("oneKmerLength: " + oneKmerLength);
+		logger.log("kmersOverlapLength: " + kmersOverlapLength);
 		List<String> results = new LinkedList<String>();
 		for (int i = 0; i <= sequence.length() - oneKmerLength; i = i + (oneKmerLength-kmersOverlapLength)) {
 			results.add(sequence.substring(i, i + oneKmerLength));
@@ -101,7 +102,12 @@ public class Sequencer {
 				}
 			}
 			
+			
+			
 			for (int i = 0; i < graph.getVertexCount(); ++i) {
+			
+				
+				
 				for (int j = 0; j < graph.getVertexCount(); ++j) {
 					
 					String firstVertex = getVertex(graph, i);
@@ -133,8 +139,8 @@ public class Sequencer {
 				}
 			}
 		} finally {
-			Logger.log("edges: " + Integer.toString(graph.getEdgeCount()));
-			Logger.log("vertices: " + Integer.toString(graph.getVertexCount()));
+			logger.log("edges: " + Integer.toString(graph.getEdgeCount()));
+			logger.log("vertices: " + Integer.toString(graph.getVertexCount()));
 		}
 //		Logger.log(graph.toString()); // mo�na sobie zerkn�� czy nie oszukuje ;)
 		return graph;

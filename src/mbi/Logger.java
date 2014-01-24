@@ -6,13 +6,19 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Logger {
 
-	private static boolean doLog = true;
-	private static final String pathToFile = "/log/log-michal-phiX174.txt";
+	private boolean doLog = true;
+	private String pathToFile;
 
-	static {
+	public Logger() {
+		String currentDate = getCurrentDate();
+		pathToFile = "/log/log-michal-porcine" + currentDate + ".txt";
+		
 		File fnew = new File(System.getProperty("user.dir") + "/" + pathToFile);
 		PrintWriter writer = null;
 		try {
@@ -25,7 +31,13 @@ public class Logger {
 		writer.close();
 	}
 	
-	private static void appendToLogFile(String message) throws IOException {
+	private String getCurrentDate() {
+		DateFormat dateFormat = new SimpleDateFormat("-yyyy-MM-dd-HH-mm-ss");
+		Date date = new Date();
+		return dateFormat.format(date);
+	}
+	
+	private void appendToLogFile(String message) throws IOException {
 		if (doLog) {
 			PrintWriter out = new PrintWriter(new BufferedWriter(
 					new FileWriter(System.getProperty("user.dir") + "/"
@@ -35,7 +47,7 @@ public class Logger {
 		}
 	}
 
-	public static void log(String description, String elapsedTime)
+	public void log(String description, String elapsedTime)
 			throws Exception {
 		if (doLog) {
 			String message = description + ": " + elapsedTime;
@@ -44,7 +56,7 @@ public class Logger {
 		}
 	}
 
-	public static void log(String message) throws IOException {
+	public void log(String message) throws IOException {
 		if (doLog) {
 			appendToLogFile(message);
 			//System.out.println(message);

@@ -1,11 +1,8 @@
-
----------
-oneKmerLength: 13
-kmersOverlapLength: 12
-Exception: Imbalanced graph given
-one k-mer length: 13
-kmersOverlapLength: 1
-genome length: 5386
----------
-oneKmerLength: 13
-kmersOverlapLength: 2
+oneKmerLength: 8
+kmersOverlapLength: 7
+edges: 5380
+vertices: 2553
+INPUT differs from RESULT
+longest: 29
+oneKmerLength: 9
+kmersOverlapLength: 8

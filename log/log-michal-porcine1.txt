@@ -1,0 +1,11 @@
+2014/01/24 16:13:25
+file name: porcine-1line.txt
+oneKmerLength: 10
+kmersOverlapLength: 9
+edges: 1758
+vertices: 1718
+finding eulerian path: 0.04851975
+INPUT differs from RESULT
+longest: 181
+whole operation: 120.477022543
+one k-mer length: 10
