@@ -18,7 +18,7 @@ public class DeBruijnGraph extends DirectedSparseMultigraph<String, String> {
 	}
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
-	public String createEdge(String v1, String v2) {
+	public String createEdgeLabel(String v1, String v2) {
 		if(v1.substring(1).equals(v2.substring(0, v2.length()-1))){	
 			String suffix="";
 			if(g.containsEdge(g.findEdge(v1,v2))){

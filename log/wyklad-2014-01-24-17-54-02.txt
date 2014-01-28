@@ -1,0 +1,34 @@
+subString BA
+[BAA, BAB]
+edge: ABAA
+occ: 1
+edge: ABAB
+occ: 1
+subString AA
+[AAA, AAB]
+edge: AAAA
+occ: 0
+edge: AAAB
+occ: 1
+subString AB
+[ABA, ABB]
+edge: AABA
+occ: 2
+subString AA
+[AAA, AAB]
+edge: BAAA
+occ: 0
+edge: BAAB
+occ: 1
+subString AB
+[ABA, ABB]
+edge: BABA
+occ: 0
+edges: 5
+vertices: 5
+Vertices:ABA,AAA,AAB,BAA,BAB
+Edges:BAAB[BAA,AAB] AAAB[AAA,AAB] ABAA[ABA,BAA] AABA[AAB,ABA] ABAB[ABA,BAB] 
+Exception: Imbalanced graph given
+whole operation: 0.008526143
+one k-mer length: 5
+genome length: 9

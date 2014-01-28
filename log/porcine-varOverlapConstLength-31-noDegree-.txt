@@ -1,0 +1,246 @@
+---------
+loading from file: 8.6567E-5
+de Bruijn graph building: 9.45986E-4
+Exception: Imbalanced graph given
+whole operation: 0.001399334
+k-mer length: 31
+overlap: 1
+graph degree: 31
+---------
+loading from file: 6.9902E-5
+de Bruijn graph building: 9.51429E-4
+Exception: Imbalanced graph given
+whole operation: 0.00136326
+k-mer length: 31
+overlap: 2
+graph degree: 31
+---------
+loading from file: 7.1586E-5
+de Bruijn graph building: 9.99008E-4
+Exception: Imbalanced graph given
+whole operation: 0.001418288
+k-mer length: 31
+overlap: 3
+graph degree: 31
+---------
+loading from file: 7.1021E-5
+de Bruijn graph building: 0.001031276
+Exception: Imbalanced graph given
+whole operation: 0.001453512
+k-mer length: 31
+overlap: 4
+graph degree: 31
+---------
+loading from file: 7.2854E-5
+de Bruijn graph building: 0.001082297
+Exception: Imbalanced graph given
+whole operation: 0.001509207
+k-mer length: 31
+overlap: 5
+graph degree: 31
+---------
+loading from file: 7.1307E-5
+de Bruijn graph building: 0.001138912
+Exception: Imbalanced graph given
+whole operation: 0.001562625
+k-mer length: 31
+overlap: 6
+graph degree: 31
+---------
+loading from file: 6.9798E-5
+de Bruijn graph building: 0.001184466
+Exception: Imbalanced graph given
+whole operation: 0.001607757
+k-mer length: 31
+overlap: 7
+graph degree: 31
+---------
+loading from file: 7.2049E-5
+de Bruijn graph building: 0.001242422
+Exception: Imbalanced graph given
+whole operation: 0.001673298
+k-mer length: 31
+overlap: 8
+graph degree: 31
+---------
+loading from file: 7.2597E-5
+de Bruijn graph building: 0.001308371
+Exception: Imbalanced graph given
+whole operation: 0.001757961
+k-mer length: 31
+overlap: 9
+graph degree: 31
+---------
+loading from file: 7.4043E-5
+de Bruijn graph building: 0.00134301
+Exception: Imbalanced graph given
+whole operation: 0.001767831
+k-mer length: 31
+overlap: 10
+graph degree: 31
+---------
+loading from file: 7.3882E-5
+de Bruijn graph building: 0.001440267
+Exception: Imbalanced graph given
+whole operation: 0.001876609
+k-mer length: 31
+overlap: 11
+graph degree: 31
+---------
+loading from file: 7.2328E-5
+de Bruijn graph building: 0.001566044
+Exception: Imbalanced graph given
+whole operation: 0.002008385
+k-mer length: 31
+overlap: 12
+graph degree: 31
+---------
+loading from file: 7.1851E-5
+de Bruijn graph building: 0.001703527
+Exception: Imbalanced graph given
+whole operation: 0.002143229
+k-mer length: 31
+overlap: 13
+graph degree: 31
+---------
+loading from file: 7.1214E-5
+de Bruijn graph building: 0.001837525
+Exception: Imbalanced graph given
+whole operation: 0.002285255
+k-mer length: 31
+overlap: 14
+graph degree: 31
+---------
+loading from file: 7.4707E-5
+de Bruijn graph building: 0.001973743
+Exception: Imbalanced graph given
+whole operation: 0.002395384
+k-mer length: 31
+overlap: 15
+graph degree: 31
+---------
+loading from file: 7.5358E-5
+de Bruijn graph building: 0.00207941
+Exception: Imbalanced graph given
+whole operation: 0.00250779
+k-mer length: 31
+overlap: 16
+graph degree: 31
+---------
+loading from file: 7.1903E-5
+de Bruijn graph building: 0.002267271
+Exception: Imbalanced graph given
+whole operation: 0.002702581
+k-mer length: 31
+overlap: 17
+graph degree: 31
+---------
+loading from file: 7.5272E-5
+de Bruijn graph building: 0.002482285
+Exception: Imbalanced graph given
+whole operation: 0.002917192
+k-mer length: 31
+overlap: 18
+graph degree: 31
+---------
+loading from file: 7.3703E-5
+de Bruijn graph building: 0.002703164
+Exception: Imbalanced graph given
+whole operation: 0.003137968
+k-mer length: 31
+overlap: 19
+graph degree: 31
+---------
+loading from file: 7.442E-5
+de Bruijn graph building: 0.003007598
+Exception: Imbalanced graph given
+whole operation: 0.003447239
+k-mer length: 31
+overlap: 20
+graph degree: 31
+---------
+loading from file: 7.5269E-5
+de Bruijn graph building: 0.003463158
+Exception: Imbalanced graph given
+whole operation: 0.003913897
+k-mer length: 31
+overlap: 21
+graph degree: 31
+---------
+loading from file: 7.503E-5
+de Bruijn graph building: 0.004171651
+Exception: Imbalanced graph given
+whole operation: 0.004649927
+k-mer length: 31
+overlap: 22
+graph degree: 31
+---------
+loading from file: 8.0421E-5
+de Bruijn graph building: 0.0048503
+Exception: Imbalanced graph given
+whole operation: 0.00535488
+k-mer length: 31
+overlap: 23
+graph degree: 31
+---------
+loading from file: 8.0087E-5
+de Bruijn graph building: 0.00580843
+Exception: Imbalanced graph given
+whole operation: 0.006327022
+k-mer length: 31
+overlap: 24
+graph degree: 31
+---------
+loading from file: 8.0173E-5
+de Bruijn graph building: 0.00705735
+Exception: Imbalanced graph given
+whole operation: 0.007630987
+k-mer length: 31
+overlap: 25
+graph degree: 31
+---------
+loading from file: 8.5892E-5
+de Bruijn graph building: 0.009139956
+Exception: Imbalanced graph given
+whole operation: 0.009749916
+k-mer length: 31
+overlap: 26
+graph degree: 31
+---------
+loading from file: 8.4526E-5
+de Bruijn graph building: 0.013914392
+Exception: Imbalanced graph given
+whole operation: 0.014602752
+k-mer length: 31
+overlap: 27
+graph degree: 31
+---------
+loading from file: 9.8031E-5
+de Bruijn graph building: 0.021696838
+Exception: Imbalanced graph given
+whole operation: 0.022517911
+k-mer length: 31
+overlap: 28
+graph degree: 31
+---------
+loading from file: 8.7921E-5
+de Bruijn graph building: 0.068039158
+finding eulerian path: 0.004318823
+INPUT differs from RESULT
+longest: 1765
+1765
+longest substring searching: 0.013735799
+whole operation: 0.086836173
+k-mer length: 31
+overlap: 29
+graph degree: 31
+---------
+loading from file: 8.7455E-5
+de Bruijn graph building: 0.067956965
+finding eulerian path: 0.004323635
+INPUT equals RESULT
+whole operation: 0.072958871
+k-mer length: 31
+overlap: 30
+graph degree: 31
+genome length: 1766

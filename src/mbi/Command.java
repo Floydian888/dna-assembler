@@ -5,5 +5,5 @@ import java.util.List;
 import java.util.ArrayList;
 
 public interface Command {
-	String execute() throws MbiException, IOException;
+	String execute() throws MbiException, IOException, Exception;
 }

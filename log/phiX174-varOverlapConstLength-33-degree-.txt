@@ -1,0 +1,438 @@
+---------
+loading from file: 1.01479E-4
+edges: 5385
+vertices: 4
+de Bruijn graph building: 0.003262519
+finding eulerian path: 0.15848718
+INPUT differs from RESULT
+longest: 12
+12
+longest substring searching: 0.166587331
+whole operation: 0.329007318
+k-mer length: 33
+overlap: 1
+graph degree: 2
+---------
+loading from file: 1.05051E-4
+edges: 5384
+vertices: 16
+de Bruijn graph building: 0.005000447
+finding eulerian path: 0.075565565
+INPUT differs from RESULT
+longest: 12
+12
+longest substring searching: 0.184939078
+whole operation: 0.266272749
+k-mer length: 33
+overlap: 2
+graph degree: 3
+---------
+loading from file: 2.45622E-4
+edges: 5383
+vertices: 64
+de Bruijn graph building: 0.012786509
+finding eulerian path: 0.060132312
+INPUT differs from RESULT
+longest: 12
+12
+longest substring searching: 0.185818518
+whole operation: 0.259750528
+k-mer length: 33
+overlap: 3
+graph degree: 4
+---------
+loading from file: 1.0446E-4
+edges: 5382
+vertices: 255
+de Bruijn graph building: 0.032828584
+finding eulerian path: 0.055276464
+INPUT differs from RESULT
+longest: 15
+15
+longest substring searching: 0.187423968
+whole operation: 0.276202675
+k-mer length: 33
+overlap: 4
+graph degree: 5
+---------
+loading from file: 1.0281E-4
+edges: 5381
+vertices: 965
+de Bruijn graph building: 0.125055181
+finding eulerian path: 0.059364207
+INPUT differs from RESULT
+longest: 17
+17
+longest substring searching: 0.178165532
+whole operation: 0.363267274
+k-mer length: 33
+overlap: 5
+graph degree: 6
+---------
+loading from file: 1.05625E-4
+edges: 5377
+vertices: 2551
+de Bruijn graph building: 0.377427131
+Exception: Imbalanced graph given
+whole operation: 0.378332444
+k-mer length: 33
+overlap: 6
+graph degree: 7
+---------
+loading from file: 1.02655E-4
+edges: 5359
+vertices: 4095
+de Bruijn graph building: 0.672687221
+Exception: Imbalanced graph given
+whole operation: 0.673589621
+k-mer length: 33
+overlap: 7
+graph degree: 8
+---------
+loading from file: 1.02608E-4
+edges: 5375
+vertices: 4918
+de Bruijn graph building: 0.820533094
+finding eulerian path: 0.045323496
+INPUT differs from RESULT
+longest: 131
+131
+longest substring searching: 0.177715254
+whole operation: 1.044260865
+k-mer length: 33
+overlap: 8
+graph degree: 9
+---------
+loading from file: 1.04289E-4
+edges: 5376
+vertices: 5224
+de Bruijn graph building: 0.866233365
+finding eulerian path: 0.052480726
+INPUT differs from RESULT
+longest: 268
+268
+longest substring searching: 0.17129094
+whole operation: 1.090689864
+k-mer length: 33
+overlap: 9
+graph degree: 10
+---------
+loading from file: 1.11653E-4
+edges: 5359
+vertices: 5313
+de Bruijn graph building: 0.888641005
+finding eulerian path: 0.037388296
+INPUT differs from RESULT
+longest: 492
+492
+longest substring searching: 0.167737518
+whole operation: 1.094983026
+k-mer length: 33
+overlap: 10
+graph degree: 11
+---------
+loading from file: 1.05549E-4
+edges: 5368
+vertices: 5359
+de Bruijn graph building: 0.891729175
+finding eulerian path: 0.04699266
+INPUT differs from RESULT
+longest: 2166
+2166
+longest substring searching: 0.202920846
+whole operation: 1.142334913
+k-mer length: 33
+overlap: 11
+graph degree: 12
+---------
+loading from file: 1.05115E-4
+edges: 5355
+vertices: 5354
+de Bruijn graph building: 0.893521384
+finding eulerian path: 0.028197946
+INPUT differs from RESULT
+longest: 5367
+5367
+longest substring searching: 0.192837176
+whole operation: 1.115235068
+k-mer length: 33
+overlap: 12
+graph degree: 13
+---------
+loading from file: 1.05142E-4
+edges: 5360
+vertices: 5361
+de Bruijn graph building: 0.896369333
+finding eulerian path: 0.028324218
+INPUT differs from RESULT
+longest: 5373
+5373
+longest substring searching: 0.185155177
+whole operation: 1.110541414
+k-mer length: 33
+overlap: 13
+graph degree: 14
+---------
+loading from file: 1.02796E-4
+edges: 5358
+vertices: 5359
+de Bruijn graph building: 0.886290422
+finding eulerian path: 0.030025479
+INPUT differs from RESULT
+longest: 5372
+5372
+longest substring searching: 0.17753852
+whole operation: 1.094534337
+k-mer length: 33
+overlap: 14
+graph degree: 15
+---------
+loading from file: 1.11268E-4
+edges: 5364
+vertices: 5365
+de Bruijn graph building: 0.890180522
+finding eulerian path: 0.028527939
+INPUT differs from RESULT
+longest: 5379
+5379
+longest substring searching: 0.170265573
+whole operation: 1.08975222
+k-mer length: 33
+overlap: 15
+graph degree: 16
+---------
+loading from file: 1.0428E-4
+edges: 5355
+vertices: 5356
+de Bruijn graph building: 0.883945167
+finding eulerian path: 0.028194304
+INPUT differs from RESULT
+longest: 5371
+5371
+longest substring searching: 0.162438106
+whole operation: 1.075262615
+k-mer length: 33
+overlap: 16
+graph degree: 17
+---------
+loading from file: 1.01832E-4
+edges: 5360
+vertices: 5361
+de Bruijn graph building: 0.898619921
+finding eulerian path: 0.028143827
+INPUT differs from RESULT
+longest: 5377
+5377
+longest substring searching: 0.197518837
+whole operation: 1.124972658
+k-mer length: 33
+overlap: 17
+graph degree: 18
+---------
+loading from file: 1.03743E-4
+edges: 5355
+vertices: 5356
+de Bruijn graph building: 0.895118429
+finding eulerian path: 0.028004271
+INPUT differs from RESULT
+longest: 5373
+5373
+longest substring searching: 0.192077895
+whole operation: 1.115885762
+k-mer length: 33
+overlap: 18
+graph degree: 19
+---------
+loading from file: 1.04553E-4
+edges: 5362
+vertices: 5363
+de Bruijn graph building: 0.888127176
+finding eulerian path: 0.028128195
+INPUT differs from RESULT
+longest: 5381
+5381
+longest substring searching: 0.18660854
+whole operation: 1.103577734
+k-mer length: 33
+overlap: 19
+graph degree: 20
+---------
+loading from file: 1.05827E-4
+edges: 5356
+vertices: 5357
+de Bruijn graph building: 0.891920326
+finding eulerian path: 0.029091798
+INPUT differs from RESULT
+longest: 5376
+5376
+longest substring searching: 0.176853587
+whole operation: 1.098565927
+k-mer length: 33
+overlap: 20
+graph degree: 21
+---------
+loading from file: 1.00728E-4
+edges: 5364
+vertices: 5365
+de Bruijn graph building: 0.893374613
+finding eulerian path: 0.028901805
+INPUT differs from RESULT
+longest: 5385
+5385
+longest substring searching: 0.172401463
+whole operation: 1.095385616
+k-mer length: 33
+overlap: 21
+graph degree: 22
+---------
+loading from file: 1.04391E-4
+edges: 5357
+vertices: 5358
+de Bruijn graph building: 0.883998211
+finding eulerian path: 0.029759504
+INPUT differs from RESULT
+longest: 5379
+5379
+longest substring searching: 0.200283935
+whole operation: 1.114740815
+k-mer length: 33
+overlap: 22
+graph degree: 23
+---------
+loading from file: 1.01116E-4
+edges: 5360
+vertices: 5361
+de Bruijn graph building: 0.90202924
+finding eulerian path: 0.027957207
+INPUT differs from RESULT
+longest: 5383
+5383
+longest substring searching: 0.191391054
+whole operation: 1.12209719
+k-mer length: 33
+overlap: 23
+graph degree: 24
+---------
+loading from file: 1.05747E-4
+edges: 5355
+vertices: 5356
+de Bruijn graph building: 0.89366712
+finding eulerian path: 0.029689082
+INPUT differs from RESULT
+longest: 5379
+5379
+longest substring searching: 0.182795693
+whole operation: 1.106872716
+k-mer length: 33
+overlap: 24
+graph degree: 25
+---------
+loading from file: 1.06198E-4
+edges: 5360
+vertices: 5361
+de Bruijn graph building: 0.893227314
+finding eulerian path: 0.029103451
+INPUT differs from RESULT
+longest: 5385
+5385
+longest substring searching: 0.174142017
+whole operation: 1.097232999
+k-mer length: 33
+overlap: 25
+graph degree: 26
+---------
+loading from file: 1.05714E-4
+edges: 5355
+vertices: 5356
+de Bruijn graph building: 0.879848522
+finding eulerian path: 0.028765423
+INPUT differs from RESULT
+longest: 5381
+5381
+longest substring searching: 0.165915447
+whole operation: 1.07521705
+k-mer length: 33
+overlap: 26
+graph degree: 27
+---------
+loading from file: 1.05162E-4
+edges: 5358
+vertices: 5359
+de Bruijn graph building: 0.887875858
+finding eulerian path: 0.028373706
+INPUT differs from RESULT
+longest: 5385
+5385
+longest substring searching: 0.199395877
+whole operation: 1.116343661
+k-mer length: 33
+overlap: 27
+graph degree: 28
+---------
+loading from file: 1.07345E-4
+edges: 5355
+vertices: 5356
+de Bruijn graph building: 0.902227059
+finding eulerian path: 0.028301263
+INPUT differs from RESULT
+longest: 5383
+5383
+longest substring searching: 0.191703249
+whole operation: 1.122966744
+k-mer length: 33
+overlap: 28
+graph degree: 29
+---------
+loading from file: 1.04723E-4
+edges: 5356
+vertices: 5357
+de Bruijn graph building: 0.903231362
+finding eulerian path: 0.028668294
+INPUT differs from RESULT
+longest: 5385
+5385
+longest substring searching: 0.184380663
+whole operation: 1.117016244
+k-mer length: 33
+overlap: 29
+graph degree: 30
+---------
+loading from file: 1.04867E-4
+edges: 5355
+vertices: 5356
+de Bruijn graph building: 0.898908183
+finding eulerian path: 0.031658565
+INPUT differs from RESULT
+longest: 5385
+5385
+longest substring searching: 0.175649969
+whole operation: 1.106951868
+k-mer length: 33
+overlap: 30
+graph degree: 31
+---------
+loading from file: 1.03134E-4
+edges: 5354
+vertices: 5355
+de Bruijn graph building: 0.883478372
+finding eulerian path: 0.028115863
+INPUT differs from RESULT
+longest: 5385
+5385
+longest substring searching: 0.165224371
+whole operation: 1.077542309
+k-mer length: 33
+overlap: 31
+graph degree: 32
+---------
+loading from file: 1.04893E-4
+edges: 5354
+vertices: 5355
+de Bruijn graph building: 0.899139827
+finding eulerian path: 0.028533439
+INPUT equals RESULT
+whole operation: 0.928380444
+k-mer length: 33
+overlap: 32
+graph degree: 33
+genome length: 5386

@@ -1,0 +1,86 @@
+---------
+loading from file: 8.8824E-5
+de Bruijn graph building: 0.003401536
+Exception: Imbalanced graph given
+whole operation: 0.003877919
+k-mer length: 11
+overlap: 1
+graph degree: 11
+---------
+loading from file: 7.359E-5
+de Bruijn graph building: 0.004191005
+Exception: Imbalanced graph given
+whole operation: 0.004658169
+k-mer length: 11
+overlap: 2
+graph degree: 11
+---------
+loading from file: 7.9019E-5
+de Bruijn graph building: 0.004938755
+Exception: Imbalanced graph given
+whole operation: 0.005435195
+k-mer length: 11
+overlap: 3
+graph degree: 11
+---------
+loading from file: 7.8365E-5
+de Bruijn graph building: 0.005775852
+Exception: Imbalanced graph given
+whole operation: 0.006309591
+k-mer length: 11
+overlap: 4
+graph degree: 11
+---------
+loading from file: 8.1871E-5
+de Bruijn graph building: 0.007085871
+Exception: Imbalanced graph given
+whole operation: 0.007642415
+k-mer length: 11
+overlap: 5
+graph degree: 11
+---------
+loading from file: 8.1222E-5
+de Bruijn graph building: 0.009032993
+Exception: Imbalanced graph given
+whole operation: 0.009638135
+k-mer length: 11
+overlap: 6
+graph degree: 11
+---------
+loading from file: 8.5782E-5
+de Bruijn graph building: 0.014004824
+Exception: Imbalanced graph given
+whole operation: 0.014700636
+k-mer length: 11
+overlap: 7
+graph degree: 11
+---------
+loading from file: 8.7573E-5
+de Bruijn graph building: 0.021592717
+Exception: Imbalanced graph given
+whole operation: 0.022346166
+k-mer length: 11
+overlap: 8
+graph degree: 11
+---------
+loading from file: 1.17333E-4
+de Bruijn graph building: 0.068668327
+finding eulerian path: 0.004219883
+INPUT differs from RESULT
+longest: 1765
+1765
+longest substring searching: 0.01927014
+whole operation: 0.092943642
+k-mer length: 11
+overlap: 9
+graph degree: 11
+---------
+loading from file: 9.1502E-5
+de Bruijn graph building: 0.069716523
+finding eulerian path: 0.004350203
+INPUT equals RESULT
+whole operation: 0.074752092
+k-mer length: 11
+overlap: 10
+graph degree: 11
+genome length: 1766

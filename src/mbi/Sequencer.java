@@ -13,13 +13,16 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import sun.org.mozilla.javascript.ast.LetNode;
 
 public class Sequencer {
 
-	private static Logger logger = new Logger();
 	private String sequence;
-	private DeBruijnGraph deBruijnGraph; 
-
+	private DeBruijnGraph deBruijnGraph;
+	
 	public final String getInputSequence() {
 		return sequence;
 	}
@@ -47,8 +50,6 @@ public class Sequencer {
 	}
 
 	public List<String> shotgun(int oneKmerLength, int kmersOverlapLength) throws IOException {
-		logger.log("oneKmerLength: " + oneKmerLength);
-		logger.log("kmersOverlapLength: " + kmersOverlapLength);
 		List<String> results = new LinkedList<String>();
 		for (int i = 0; i <= sequence.length() - oneKmerLength; i = i + (oneKmerLength-kmersOverlapLength)) {
 			results.add(sequence.substring(i, i + oneKmerLength));
@@ -61,9 +62,9 @@ public class Sequencer {
 		return shotgun(oneKmerLength, oneKmerLength-1);
 	}
 	
-/*	public List<String> shotgun(int oneKmerLength, int kmersOverlapLength) throws IOException {
-		return Arrays.asList("AAABA","ABAAB","BAABA","AABAB");
-	}*/
+//	public List<String> shotgun(int oneKmerLength, int kmersOverlapLength) throws IOException {
+//		return Arrays.asList("AAABA","ABAAB","BAABA","AABAB");
+//	}
 
 	private static int countOccurrences(String string, String subString) {
 
@@ -86,7 +87,21 @@ public class Sequencer {
 		return graph.getVertices().toArray()[index].toString();
 	}
 	
-	public static DeBruijnGraph getDeBruijnGraph(String inputSequence, Collection<String> kmers, boolean allowRepeatedEdges,
+	private String [] letters = {"A", "G", "T", "C"};
+//	private String [] letters = {"A", "B"};
+	
+	private static void rep(LinkedList<char[]> reps, char[] input, char[] item, int count){
+        if (count < item.length){
+            for (int i = 0; i < input.length; i++) {
+                item[count] = input[i];
+                rep(reps, input, item, count+1);
+            }
+        }else{
+            reps.add(item.clone());
+        }
+    }
+	
+	public DeBruijnGraph getDeBruijnGraph(String inputSequence, Collection<String> kmers, boolean allowRepeatedEdges,
 			int vertexStringLength ) throws IOException, MbiException {
 		DeBruijnGraph graph = new DeBruijnGraph();
 		graph.setGraph(graph);
@@ -102,45 +117,45 @@ public class Sequencer {
 				}
 			}
 			
-			
-			
 			for (int i = 0; i < graph.getVertexCount(); ++i) {
 			
+				String firstVertex = getVertex(graph, i);
+				String subString = firstVertex.substring(1, firstVertex.length());
+				List<String> possibleStrings = new LinkedList<String>();
 				
+//				logger.log("subString " + subString);
 				
-				for (int j = 0; j < graph.getVertexCount(); ++j) {
+//				LinkedList<char[]> items = new LinkedList<char[]>();
+//		        char[] item = new char[vertexStringLength];
+//		        char[] input = {'A', 'B'};
+				
+				for (int j = 0; j < letters.length; j++) {
 					
-					String firstVertex = getVertex(graph, i);
-					String secondVertex = getVertex(graph, j);
-
-					if(firstVertex.length() != secondVertex.length())
-						throw new MbiException("Vertices with strings of different length!");
-					
-					int length = firstVertex.length();
-					
-					if(firstVertex.substring(1, length).equals(secondVertex.substring(0, length-1))) {
-						String lastLetterOfSecondVertex = secondVertex.substring(secondVertex.length()-1);
-						String string =  firstVertex + lastLetterOfSecondVertex;
-						int occurrencesNumber = countOccurrences(inputSequence, string);
-						
-//						Logger.log("---");
-//						Logger.log("firstVertex: " + firstVertex);
-//						Logger.log("secondVertex: " + secondVertex);
-//						Logger.log("lastLetterOfSecondVertex: " + lastLetterOfSecondVertex);
-//						Logger.log("string: " + string);
-//						Logger.log("occurrencesNumber: " + occurrencesNumber);
-						
-						for (int k = 0; k < occurrencesNumber; k++) {
-							String edge = graph.createEdge(firstVertex, secondVertex);
-							if(edge != null)
-								graph.addEdge(edge, firstVertex, secondVertex);
+					possibleStrings.add(subString + letters[j]);
+				}
+				
+//				logger.log(possibleStrings.toString());
+				
+				for (String string : possibleStrings) {
+					if(graph.containsVertex(string)) {
+						String edge = graph.createEdgeLabel(firstVertex, string);
+						if(edge != null) {
+							int occurrencesNumber = countOccurrences(inputSequence, edge);
+//							logger.log("edge: " + edge);
+//							logger.log("occ: " + occurrencesNumber);
+							if(occurrencesNumber > 0) {
+								for (int k = 0; k < occurrencesNumber; k++) {
+									graph.addEdge(edge + k, firstVertex, string);
+								}
+							}
 						}
+
 					}
 				}
 			}
 		} finally {
-			logger.log("edges: " + Integer.toString(graph.getEdgeCount()));
-			logger.log("vertices: " + Integer.toString(graph.getVertexCount()));
+			Logger.log("edges: " + Integer.toString(graph.getEdgeCount()));
+			Logger.log("vertices: " + Integer.toString(graph.getVertexCount()));
 		}
 //		Logger.log(graph.toString()); // mo�na sobie zerkn�� czy nie oszukuje ;)
 		return graph;
