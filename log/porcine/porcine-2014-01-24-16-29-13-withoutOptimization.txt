@@ -1,0 +1,10 @@
+oneKmerLength: 10
+kmersOverlapLength: 9
+edges: 1758
+vertices: 1718
+finding eulerian path: 0.042859269
+INPUT differs from RESULT
+longest: 181
+whole operation: 121.266985437
+one k-mer length: 10
+genome length: 1766

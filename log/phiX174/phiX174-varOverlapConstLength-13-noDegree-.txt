@@ -1,0 +1,126 @@
+---------
+loading from file: 9.8441E-5
+edges: 448
+vertices: 895
+de Bruijn graph building: 0.028148909
+Exception: Imbalanced graph given
+whole operation: 0.028751218
+k-mer length: 13
+overlap: 1
+graph degree: 13
+---------
+loading from file: 1.00442E-4
+edges: 489
+vertices: 978
+de Bruijn graph building: 0.030981973
+Exception: Imbalanced graph given
+whole operation: 0.031604589
+k-mer length: 13
+overlap: 2
+graph degree: 13
+---------
+loading from file: 1.01494E-4
+edges: 538
+vertices: 1076
+de Bruijn graph building: 0.035515263
+Exception: Imbalanced graph given
+whole operation: 0.036198519
+k-mer length: 13
+overlap: 3
+graph degree: 13
+---------
+loading from file: 1.04687E-4
+edges: 598
+vertices: 1196
+de Bruijn graph building: 0.040619531
+Exception: Imbalanced graph given
+whole operation: 0.04127631
+k-mer length: 13
+overlap: 4
+graph degree: 13
+---------
+loading from file: 1.04672E-4
+edges: 672
+vertices: 1344
+de Bruijn graph building: 0.048311145
+Exception: Imbalanced graph given
+whole operation: 0.049007242
+k-mer length: 13
+overlap: 5
+graph degree: 13
+---------
+loading from file: 1.0322E-4
+edges: 768
+vertices: 1536
+de Bruijn graph building: 0.057250756
+Exception: Imbalanced graph given
+whole operation: 0.058030459
+k-mer length: 13
+overlap: 6
+graph degree: 13
+---------
+loading from file: 1.01856E-4
+edges: 896
+vertices: 1791
+de Bruijn graph building: 0.091725899
+Exception: Imbalanced graph given
+whole operation: 0.092638604
+k-mer length: 13
+overlap: 7
+graph degree: 13
+---------
+loading from file: 1.01286E-4
+edges: 1076
+vertices: 2150
+de Bruijn graph building: 0.126024927
+Exception: Imbalanced graph given
+whole operation: 0.127004939
+k-mer length: 13
+overlap: 8
+graph degree: 13
+---------
+loading from file: 1.04479E-4
+edges: 1344
+vertices: 2687
+de Bruijn graph building: 0.196511646
+Exception: Imbalanced graph given
+whole operation: 0.197429399
+k-mer length: 13
+overlap: 9
+graph degree: 13
+---------
+loading from file: 1.05019E-4
+edges: 1792
+vertices: 3583
+de Bruijn graph building: 0.374433014
+Exception: Imbalanced graph given
+whole operation: 0.375857917
+k-mer length: 13
+overlap: 10
+graph degree: 13
+---------
+loading from file: 1.02308E-4
+edges: 5373
+vertices: 5372
+de Bruijn graph building: 0.897790283
+finding eulerian path: 0.03175481
+INPUT differs from RESULT
+longest: 5385
+5385
+longest substring searching: 0.188538002
+whole operation: 1.119076273
+k-mer length: 13
+overlap: 11
+graph degree: 13
+---------
+loading from file: 1.09555E-4
+edges: 5374
+vertices: 5373
+de Bruijn graph building: 0.907238727
+finding eulerian path: 0.03033613
+INPUT equals RESULT
+whole operation: 0.938342145
+k-mer length: 13
+overlap: 12
+graph degree: 13
+genome length: 5386

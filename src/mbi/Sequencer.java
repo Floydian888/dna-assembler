@@ -20,15 +20,15 @@ import sun.org.mozilla.javascript.ast.LetNode;
 
 public class Sequencer {
 
-	private String sequence;
+	private String inputSequence;
 	private DeBruijnGraph deBruijnGraph;
 	
 	public final String getInputSequence() {
-		return sequence;
+		return inputSequence;
 	}
 	
 	public void loadSequence(String sequenceToLoad) {
-		sequence = sequenceToLoad;
+		inputSequence = sequenceToLoad;
 	}
 	
 	// nie wiem czy ma to ostatecznie by�, ale do naszych test�w niech na razie zostanie
@@ -46,13 +46,13 @@ public class Sequencer {
 				builder.append("A");
 			}
 		}
-		sequence = builder.toString();
+		inputSequence = builder.toString();
 	}
 
 	public List<String> shotgun(int oneKmerLength, int kmersOverlapLength) throws IOException {
 		List<String> results = new LinkedList<String>();
-		for (int i = 0; i <= sequence.length() - oneKmerLength; i = i + (oneKmerLength-kmersOverlapLength)) {
-			results.add(sequence.substring(i, i + oneKmerLength));
+		for (int i = 0; i <= inputSequence.length() - oneKmerLength; i = i + (oneKmerLength-kmersOverlapLength)) {
+			results.add(inputSequence.substring(i, i + oneKmerLength));
 		}
 		//Collections.shuffle(results);
 		return results;
@@ -89,17 +89,6 @@ public class Sequencer {
 	
 	private String [] letters = {"A", "G", "T", "C"};
 //	private String [] letters = {"A", "B"};
-	
-	private static void rep(LinkedList<char[]> reps, char[] input, char[] item, int count){
-        if (count < item.length){
-            for (int i = 0; i < input.length; i++) {
-                item[count] = input[i];
-                rep(reps, input, item, count+1);
-            }
-        }else{
-            reps.add(item.clone());
-        }
-    }
 	
 	public DeBruijnGraph getDeBruijnGraph(String inputSequence, Collection<String> kmers, boolean allowRepeatedEdges,
 			int vertexStringLength ) throws IOException, MbiException {
@@ -162,7 +151,7 @@ public class Sequencer {
 
 	}
 
-	public void buildDeBruijnGraph (String inputSequence, List<String> kmers, int graphDegree) throws IOException, MbiException {
+	public void buildDeBruijnGraph (List<String> kmers, int graphDegree) throws IOException, MbiException {
 		deBruijnGraph = getDeBruijnGraph(inputSequence, kmers, true, graphDegree-1);
 	}
 	
@@ -200,7 +189,7 @@ public class Sequencer {
 			System.err.println("Error: " + e.getMessage());
 
 		}
-		sequence = subStr.trim();
+		inputSequence = subStr.trim();
 	}
 	
 	public void loadSequenceFromOneLineFile(String pathToFile) throws IOException {
@@ -208,7 +197,7 @@ public class Sequencer {
 		try {
 		    StringBuilder sequenceBuilder = new StringBuilder();
 		    sequenceBuilder.append(br.readLine());
-		    sequence = sequenceBuilder.toString();
+		    inputSequence = sequenceBuilder.toString();
 		   }
 		finally {
 		    br.close();

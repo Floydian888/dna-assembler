@@ -62,39 +62,6 @@ public class Tests {
 
 	}
 	
-	private static int longestSubstring(String first, String second) {
-	    if (first == null || second == null || first.length() == 0 || second.length() == 0) {
-	        return 0;
-	    }
-	 
-	    int maxLen = 0;
-	    int fl = first.length();
-	    int sl = second.length();
-	    int[][] table = new int[fl+1][sl+1];
-	 
-	    for(int s=0; s <= sl; s++)
-	      table[0][s] = 0;
-	    for(int f=0; f <= fl; f++)
-	      table[f][0] = 0;
-	 
-	    for (int i = 1; i <= fl; i++) {
-	        for (int j = 1; j <= sl; j++) {
-	            if (first.charAt(i-1) == second.charAt(j-1)) {
-	                if (i == 1 || j == 1) {
-	                    table[i][j] = 1;
-	                }
-	                else {
-	                    table[i][j] = table[i - 1][j - 1] + 1;
-	                }
-	                if (table[i][j] > maxLen) {
-	                    maxLen = table[i][j];
-	                }
-	            }
-	        }
-	    }
-	    return maxLen;
-	}
-	
 	private String assemble(Sequencer sequencer, int oneKmerLength, int kmersOverlapLength, int graphDegree) throws IOException {
 		
 		List<String> kmers = sequencer.shotgun(oneKmerLength, kmersOverlapLength);
@@ -108,7 +75,7 @@ public class Tests {
 			
 			long startTime = System.nanoTime();
 			
-			sequencer.buildDeBruijnGraph(inputSequence, kmers, graphDegree);
+			sequencer.buildDeBruijnGraph(kmers, graphDegree);
 			
 			long elapsedTime = System.nanoTime() - startTime;
 			double elapsedTimeInSeconds = (double)elapsedTime / 1000000000.0;
@@ -125,7 +92,7 @@ public class Tests {
 				Logger.log("INPUT differs from RESULT");
 				
 				startTime = System.nanoTime();
-				int longestCommonSubstringLength = longestSubstring(inputSequence, resultSequence);
+				int longestCommonSubstringLength = Helpers.longestSubstringLength(inputSequence, resultSequence);
 				Logger.log("longest: " + longestCommonSubstringLength);
 				Logger.logLongestCommonSubstringLength(Integer.toString(longestCommonSubstringLength));
 				elapsedTime = System.nanoTime() - startTime;
@@ -260,7 +227,7 @@ public class Tests {
 	}
 	
 	private void testAll(String organismName) throws Exception {
-//		test_constOverlapVariableLength(organismName, 20, true);
+		test_constOverlapVariableLength(organismName, 20, true);
 		int smallestKmerLengthToProduceCorrectResult = test_constOverlapVariableLength(organismName, 15, true);
 		
 		boolean[][] allPossibilities = { { true, true }, { true, false }, { false, true }, { false, false } };
@@ -272,7 +239,7 @@ public class Tests {
 		}
 	}
 	
-	//@Test
+	@Test
 	public void porcine_testAll() throws Exception {
 		testAll("porcine");
 	}
@@ -282,9 +249,8 @@ public class Tests {
 		testAll("phiX174");
 	}
 	
-	@Test
+	//@Test
 	public void humanMitochondrion_testAll() throws Exception {
-//		int smallestKmerLengthToProduceCorrectResult = test_constOverlapVariableLength("mitoch", 4, false);
 		testAll("mitoch");
 	}
 	

@@ -1,8 +1,0 @@
-oneKmerLength: 8
-kmersOverlapLength: 7
-edges: 5380
-vertices: 2553
-INPUT differs from RESULT
-longest: 29
-oneKmerLength: 9
-kmersOverlapLength: 8
