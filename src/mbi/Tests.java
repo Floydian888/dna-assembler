@@ -18,13 +18,12 @@ public class Tests {
 	private class AssembleFromFileCommand implements Command {
 
 		private String pathToFile;
-		private Sequencer sequencer = new Sequencer();
+		private KmersGenerator kmersGenerator = new KmersGenerator();
 		private int oneKmerLength;
 		private int kmersOverlapLength;
 		private int graphDegree;
 
-		public AssembleFromFileCommand(String organismName, int oneKmerLengthToLoad, int kmersOverlapLengthToLoad,
-				int graphDegreeToLoad) {
+		public AssembleFromFileCommand(String organismName, int oneKmerLengthToLoad, int kmersOverlapLengthToLoad, int graphDegreeToLoad) {
 			pathToFile = System.getProperty("user.dir") + pathToGenomeData + organismName + ".txt";
 			oneKmerLength = oneKmerLengthToLoad;
 			kmersOverlapLength = kmersOverlapLengthToLoad;
@@ -32,17 +31,17 @@ public class Tests {
 		}
 		
 		public final String getInputSequence() {
-			return sequencer.getInputSequence();
+			return kmersGenerator.getInputSequence();
 		}
 
 		public String execute() throws Exception {
 			long startTime = System.nanoTime();
-			sequencer.loadSequenceFromOneLineFile(pathToFile);
+			kmersGenerator.loadSequenceFromOneLineFile(pathToFile);
 			long elapsedTime = System.nanoTime() - startTime;
 			double elapsedTimeInSeconds = (double)elapsedTime / 1000000000.0;
 			Logger.log("loading from file", Double.toString(elapsedTimeInSeconds));
 			
-			String resultSequence = assemble(sequencer, oneKmerLength, kmersOverlapLength, graphDegree);
+			String resultSequence = assemble(kmersGenerator, oneKmerLength, kmersOverlapLength, graphDegree);
 			return resultSequence;
 		}
 
@@ -50,40 +49,49 @@ public class Tests {
 	
 	private class AssembleCommand implements Command {
 
-		private Sequencer sequencer;
+		private Assembler assembler;
+		private int deBruijnGraphDegree;
 
-		public AssembleCommand(Sequencer sequencerToLoad) {
-			sequencer = sequencerToLoad;
+		public AssembleCommand(Assembler assembler, int deBruijnGraphDegree) {
+			this.assembler = assembler;
+			this.deBruijnGraphDegree = deBruijnGraphDegree;
 		}
 
-		public String execute() throws MbiException {
-			return sequencer.assemble();
+		public String execute() throws MbiException, IOException {
+			if(assembler == null)
+				System.out.println("assembler null");
+			assembler.buildDeBruijnGraph(deBruijnGraphDegree);
+			assembler.assemble();
+			return assembler.getAssembledSequence();
 		}
 
 	}
 	
-	private String assemble(Sequencer sequencer, int oneKmerLength, int kmersOverlapLength, int graphDegree) throws IOException {
+	private String assemble(KmersGenerator kmersGenerator, int oneKmerLength, int kmersOverlapLength, int graphDegree) throws IOException {
 		
-		List<String> kmers = sequencer.shotgun(oneKmerLength, kmersOverlapLength);
-		String inputSequence = sequencer.getInputSequence();
+		List<String> kmers = kmersGenerator.getKmers(oneKmerLength, kmersOverlapLength);
+		String inputSequence = kmersGenerator.getInputSequence();
 		String resultSequence = null;
 
-//			Logger.log("K-MERS: " + kmers.toString());
-//			Logger.log("INPUT:  " + inputSequence);
+			Logger.log("K-MERS: " + kmers.toString());
+			Logger.log("INPUT:  " + inputSequence);
 
 		try {
+			Assembler assembler = new Assembler();
+			assembler.loadSequence(inputSequence);
+			assembler.loadKmers(kmers);
 			
 			long startTime = System.nanoTime();
 			
-			sequencer.buildDeBruijnGraph(kmers, graphDegree);
+			assembler.buildDeBruijnGraph(graphDegree);
 			
 			long elapsedTime = System.nanoTime() - startTime;
 			double elapsedTimeInSeconds = (double)elapsedTime / 1000000000.0;
 			Logger.log("de Bruijn graph building", Double.toString(elapsedTimeInSeconds));
 			
-			resultSequence = TimeMeasureHandler.executeAndMeasure(new AssembleCommand(sequencer), "finding eulerian path");
+			resultSequence = TimeMeasureHandler.executeAndMeasure(new AssembleCommand(assembler, graphDegree), "finding eulerian path");
 
-//			Logger.log("RESULT: " + resultSequence);
+			Logger.log("RESULT: " + resultSequence);
 			
 			if(inputSequence.equals(resultSequence)) {
 				Logger.log("INPUT equals RESULT");
@@ -227,8 +235,8 @@ public class Tests {
 	}
 	
 	private void testAll(String organismName) throws Exception {
-		test_constOverlapVariableLength(organismName, 20, true);
-		int smallestKmerLengthToProduceCorrectResult = test_constOverlapVariableLength(organismName, 15, true);
+		test_constOverlapVariableLength(organismName, 20, false);
+		int smallestKmerLengthToProduceCorrectResult = test_constOverlapVariableLength(organismName, 20, true);
 		
 		boolean[][] allPossibilities = { { true, true }, { true, false }, { false, true }, { false, false } };
 //		boolean[][] allPossibilities = { { true, false }, { false, false } };

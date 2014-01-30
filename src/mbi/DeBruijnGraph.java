@@ -12,18 +12,18 @@ public class DeBruijnGraph extends DirectedSparseMultigraph<String, String> {
 	
 	//+++++++++++++++++++++++ magic happens +++++++++++++++++++++++++++++
 	//++++++++++++ straszna gimmnastyka, ale inaczej nie dzia�a +++++++++
-	private DirectedSparseMultigraph<String, String> g;
-	public void setGraph(DirectedSparseMultigraph<String, String> graph){
-		g = graph;
-	}
+//	private DirectedSparseMultigraph<String, String> g;
+//	public void setGraph(DirectedSparseMultigraph<String, String> graph){
+//		g = graph;
+//	}
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
-	public String createEdgeLabel(String v1, String v2) {
-		if(v1.substring(1).equals(v2.substring(0, v2.length()-1))){	
+	public String createEdgeLabel(String vertex1, String vertex2) {
+		if(vertex1.substring(1).equals(vertex2.substring(0, vertex2.length()-1))){	
 			String suffix="";
-			if(g.containsEdge(g.findEdge(v1,v2))){
-				Collection<String> fromV1 = g.getOutEdges(v1);
-				Collection<String> intoV2 = g.getInEdges(v2);
+			if(containsEdge(findEdge(vertex1,vertex2))){
+				Collection<String> fromV1 = getOutEdges(vertex1);
+				Collection<String> intoV2 = getInEdges(vertex2);
 				int nextNo=1;
 				for(String fv1:fromV1){
 					if(intoV2.contains(fv1)){
@@ -32,10 +32,10 @@ public class DeBruijnGraph extends DirectedSparseMultigraph<String, String> {
 				}
 				suffix="("+nextNo+")";
 			}
-			if(v1.length()>v2.length()){
-				return v1+v2.substring(v2.length()-1, v2.length())+suffix;
+			if(vertex1.length()>vertex2.length()){
+				return vertex1+vertex2.substring(vertex2.length()-1, vertex2.length())+suffix;
 			}else{
-				return v1.substring(0,1)+v2+suffix;
+				return vertex1.substring(0,1)+vertex2+suffix;
 			}
 		}else{
 			return null;
@@ -52,28 +52,28 @@ public class DeBruijnGraph extends DirectedSparseMultigraph<String, String> {
 		return vers;
 	}
 
-	public synchronized List<String> findEulerPath_Fleury() // na razie algorytm Fleury'ego
+	public synchronized List<String> findEulerPath_FleuryAlg() // na razie algorytm Fleury'ego
 			throws MbiException {
 		List<String> path = new LinkedList<String>();
-		DeBruijnGraph gtmp = (DeBruijnGraph) g; // niezbyt eleganckie 
-		Set<String> imbalanced = gtmp.getImbalancedVertices();
+//		DeBruijnGraph gtmp = (DeBruijnGraph) g; // niezbyt eleganckie 
+		Set<String> imbalanced = getImbalancedVertices();
 		if (imbalanced.size() != 2) {
 			throw new MbiException("Imbalanced graph given");
 		}
-		while (gtmp.getVertices().size() != 0) {
+		while (getVertices().size() != 0) {
 			String start = null, end = null;
 			int startIndex = -1;
 			if (path.size() == 0) {
 				for (String vert : imbalanced) {
-					if (gtmp.inDegree(vert) < gtmp.outDegree(vert)) {
+					if (inDegree(vert) < outDegree(vert)) {
 						start = vert;
-					} else if (gtmp.inDegree(vert) > gtmp.outDegree(vert)) {
+					} else if (inDegree(vert) > outDegree(vert)) {
 						end = vert;
 					}
 				}
 				assert (start != null && end != null && !start.equals(end));
 			} else {
-				for (String vert : gtmp.getVertices()) {
+				for (String vert : getVertices()) {
 					startIndex = path.lastIndexOf(vert);
 					if (startIndex >= 0) {
 						path.remove(startIndex);
@@ -88,23 +88,23 @@ public class DeBruijnGraph extends DirectedSparseMultigraph<String, String> {
 				} else {
 					path.add(startIndex++, start);
 				}
-				Collection<String> directions = gtmp.getOutgoing_internal(start);
+				Collection<String> directions = getOutgoing_internal(start);
 				if (directions.size() > 0) {
 					String direction = directions.toArray(new String[directions.size()])[0];
-					start = gtmp.getDest(direction);
-					gtmp.removeEdge(direction);
+					start = getDest(direction);
+					removeEdge(direction);
 				} else {
 					start = null;
 				}
 			}
 			Set<String> vertsToRemove = new HashSet<String>();
-			for (String vert : gtmp.getVertices()) {
-				if (gtmp.inDegree(vert) == 0 && gtmp.outDegree(vert) == 0) {
+			for (String vert : getVertices()) {
+				if (inDegree(vert) == 0 && outDegree(vert) == 0) {
 					vertsToRemove.add(vert);
 				}
 			}
 			for (String vert : vertsToRemove) {
-				gtmp.removeVertex(vert);
+				removeVertex(vert);
 			}
 		}
 		return path;
